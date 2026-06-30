@@ -22,10 +22,10 @@
     --green-dk:#0fa46c;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;background:var(--cream);}
   body{
     font-family:'Manrope',sans-serif;
-    background:var(--cream);
+    background:transparent;
     color:var(--ink);
     overflow-x:hidden;
     -webkit-tap-highlight-color:transparent;
@@ -39,7 +39,9 @@
   a{text-decoration:none;color:inherit;}
   img{max-width:100%;display:block;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
-  section{position:relative;}
+  section{position:relative;z-index:1;}
+  /* section semi-transparan tipis: uang global tampak samar di belakang teks tanpa memecah fokus */
+  .sec{background:rgba(255,245,250,.86);}
 
   /* ---------- floating WA button ---------- */
   .fab{
@@ -397,7 +399,8 @@
   }
 
   /* ====== UANG BERTERBANGAN ====== */
-  .money-layer{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden;}
+  .money-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+  .money-layer .money{filter:drop-shadow(0 2px 4px rgba(0,0,0,.08)) blur(.4px);animation-name:moneyRiseSoft;}
   .money{
     position:absolute;bottom:-60px;font-size:28px;
     will-change:transform,opacity;opacity:0;
@@ -411,12 +414,20 @@
     90%{opacity:1;}
     100%{transform:translateY(-110vh) rotate(360deg) scale(.9);opacity:0;}
   }
+  /* versi redup untuk lapisan global di belakang konten */
+  @keyframes moneyRiseSoft{
+    0%{transform:translateY(0) rotate(0deg) scale(.8);opacity:0;}
+    10%{opacity:.55;}
+    50%{transform:translateY(-55vh) rotate(180deg) scale(1);opacity:.5;}
+    90%{opacity:.5;}
+    100%{transform:translateY(-110vh) rotate(360deg) scale(.9);opacity:0;}
+  }
   /* uang berkilau di hero (lapisan dalam hero, di belakang teks) */
   .hero .money-bg{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;}
   .hero .money-bg .money{font-size:34px;animation-duration:9s;}
 
   /* burst saat klik tombol */
-  .burst{position:fixed;z-index:1001;pointer-events:none;font-size:26px;
+  .burst{position:fixed;z-index:0;pointer-events:none;font-size:26px;
     animation:burstOut .9s ease-out forwards;}
   @keyframes burstOut{
     0%{transform:translate(0,0) scale(.4) rotate(0);opacity:1;}

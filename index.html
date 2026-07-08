@@ -552,6 +552,17 @@
   .testi .who .nm{font-weight:800;font-size:14.5px;color:var(--ink);}
   .testi .who .mt{font-size:12.5px;color:#9a6a82;}
   @media(min-width:768px){ .testi{flex-basis:32%;} }
+  /* skeleton loader testimoni */
+  .testi-skeleton{pointer-events:none;}
+  .sk{background:linear-gradient(90deg,#f3e3ec 25%,#fbeef5 50%,#f3e3ec 75%);background-size:200% 100%;animation:skshine 1.3s ease-in-out infinite;border-radius:8px;}
+  .sk-stars{width:96px;height:15px;margin-bottom:12px;}
+  .sk-line{height:12px;margin-bottom:9px;}
+  .sk-line.short{width:70%;}
+  .sk-line.xs{height:10px;margin-bottom:6px;}
+  .sk-who{display:flex;align-items:center;gap:12px;margin-top:16px;}
+  .sk-ava{width:44px;height:44px;border-radius:50%;flex-shrink:0;}
+  @keyframes skshine{0%{background-position:200% 0}100%{background-position:-200% 0}}
+  .testi-empty{flex:1 1 100%;text-align:center;color:#9a6a82;font-size:14px;padding:20px 0;}
 
   /* ====== KENAPA PILIH KAMI ====== */
   .why-grid{display:grid;gap:16px;}
@@ -924,34 +935,13 @@
       <h2>Sudah Banyak Yang Berhasil</h2>
       <p class="lead">Penjual dari berbagai kota mempercayakan akun mereka kepada kami.</p>
     </div>
-    <div class="testi-track reveal">
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>"Proses cepat banget, akun IG 12rb followers saya laku dan dananya cair cuma 2 hari. Aman, recommended!"</p>
-        <div class="who"><span class="ava" style="background:linear-gradient(135deg,#e91e8c,#7a0e46)">RA</span><div><div class="nm">Rizky Aditya</div><div class="mt">Semarang · Instagram</div></div></div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>"Awalnya ragu, ternyata adminnya ramah dan jelasin semua step-nya. Harga TikTok saya sesuai performa, nggak dikadalin."</p>
-        <div class="who"><span class="ava" style="background:linear-gradient(135deg,#25F4EE,#FE2C55)">SN</span><div><div class="nm">Siti Nurhaliza</div><div class="mt">Bandung · TikTok</div></div></div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>"Daripada akun nganggur, mending dijual. Pencairan tepat waktu sesuai janji. Bakal jual akun lainnya juga di sini."</p>
-        <div class="who"><span class="ava" style="background:linear-gradient(135deg,#c2185b,#ff3da6)">BP</span><div><div class="nm">Bayu Pratama</div><div class="mt">Surabaya · Instagram</div></div></div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>"Verifikasinya teliti, jadi makin percaya ini serius. Followers 8rb saya dihargai pantas. Terima kasih tim Duta Teladan!"</p>
-        <div class="who"><span class="ava" style="background:linear-gradient(135deg,#7a0e46,#e91e8c)">DM</span><div><div class="nm">Dewi Maharani</div><div class="mt">Yogyakarta · TikTok</div></div></div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>"Komunikasi via WhatsApp gampang, formulirnya simpel. Uang masuk rekening kurang dari 3 hari. Mantap!"</p>
-        <div class="who"><span class="ava" style="background:linear-gradient(135deg,#ff3da6,#c2185b)">AW</span><div><div class="nm">Andi Wijaya</div><div class="mt">Makassar · Instagram</div></div></div>
-      </div>
+    <div class="testi-track reveal" id="testiTrack">
+      <!-- Testimoni dimuat otomatis dari Google Sheets -->
+      <div class="testi testi-skeleton"><div class="sk sk-stars"></div><div class="sk sk-line"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div><div class="sk-who"><div class="sk sk-ava"></div><div style="flex:1"><div class="sk sk-line xs"></div><div class="sk sk-line xs short"></div></div></div></div>
+      <div class="testi testi-skeleton"><div class="sk sk-stars"></div><div class="sk sk-line"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div><div class="sk-who"><div class="sk sk-ava"></div><div style="flex:1"><div class="sk sk-line xs"></div><div class="sk sk-line xs short"></div></div></div></div>
+      <div class="testi testi-skeleton"><div class="sk sk-stars"></div><div class="sk sk-line"></div><div class="sk sk-line"></div><div class="sk sk-line short"></div><div class="sk-who"><div class="sk sk-ava"></div><div style="flex:1"><div class="sk sk-line xs"></div><div class="sk sk-line xs short"></div></div></div></div>
     </div>
-    <p class="center" style="font-size:12.5px;color:#9a6a82;margin-top:6px">Geser ke samping untuk melihat testimoni lainnya →</p>
+    <p class="center" id="testiHint" style="font-size:12.5px;color:#9a6a82;margin-top:6px">Geser ke samping untuk melihat testimoni lainnya →</p>
   </div>
 </section>
 
@@ -989,6 +979,10 @@
       <h2>Pertanyaan Yang Sering Diajukan</h2>
     </div>
     <div class="faq reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Apakah Duta Teladan menjual atau memiliki katalog akun media sosial? <span class="pl">+</span></button>
+        <div class="faq-a"><p><b>Tidak.</b> Duta Teladan tidak menjual akun media sosial, tidak memiliki katalog akun, dan bukan marketplace. Kami hanya membeli akun dari pemilik akun yang ingin menjual akunnya kepada kami. Jika Anda ingin membeli akun, mohon maaf kami tidak melayani penjualan akun.</p></div>
+      </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Apakah menjual akun di sini aman? <span class="pl">+</span></button>
         <div class="faq-a"><p>Aman. Layanan ini berada di bawah program Duta Teladan by Universitas STEKOM. Setiap akun melewati proses review dan verifikasi keamanan sebelum transaksi diselesaikan, dan data penjual dijaga kerahasiaannya.</p></div>
@@ -1240,6 +1234,154 @@
       },{threshold:.4});
       io.observe(box);
     } else { animateOnce(); }
+  })();
+
+  // ====== TESTIMONI AUTO-UPDATE DARI GOOGLE SHEETS ======
+  // Struktur kolom sheet (baris pertama = header):
+  //   Nama | Kota | Platform | Bintang | Testimoni
+  // Contoh baris: Rizky Aditya | Semarang | Instagram | 5 | Proses cepat banget...
+  (function(){
+    var SHEET_ID  = '1J-lRpN-6dggJyqlouz7qyXP-vMLAAHoPQFGpOawbfso';
+    var SHEET_GID = '0'; // ganti jika data ada di tab/sheet lain
+    var CSV_URL   = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
+                    '/export?format=csv&gid=' + SHEET_GID + '&_cb=' + Date.now();
+
+    var track = document.getElementById('testiTrack');
+    var hint  = document.getElementById('testiHint');
+    if(!track) return;
+
+    var AVA_GRADIENTS = [
+      'linear-gradient(135deg,#e91e8c,#7a0e46)',
+      'linear-gradient(135deg,#25F4EE,#FE2C55)',
+      'linear-gradient(135deg,#c2185b,#ff3da6)',
+      'linear-gradient(135deg,#7a0e46,#e91e8c)',
+      'linear-gradient(135deg,#ff3da6,#c2185b)',
+      'linear-gradient(135deg,#f06292,#ad1457)'
+    ];
+
+    function esc(s){
+      return String(s == null ? '' : s)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+    }
+
+    function initials(name){
+      var parts = String(name || '').trim().split(/\s+/).filter(Boolean);
+      if(parts.length === 0) return '?';
+      if(parts.length === 1) return parts[0].slice(0,2).toUpperCase();
+      return (parts[0][0] + parts[parts.length-1][0]).toUpperCase();
+    }
+
+    function stars(n){
+      var v = parseInt(n,10);
+      if(isNaN(v) || v < 1) v = 5;
+      if(v > 5) v = 5;
+      return '★★★★★'.slice(0, v) + '☆☆☆☆☆'.slice(0, 5 - v);
+    }
+
+    // Parser CSV sederhana yang aman terhadap koma & tanda kutip dalam sel
+    function parseCSV(text){
+      var rows = [], row = [], field = '', i = 0, inQuotes = false;
+      text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+      while(i < text.length){
+        var c = text[i];
+        if(inQuotes){
+          if(c === '"'){
+            if(text[i+1] === '"'){ field += '"'; i += 2; continue; }
+            inQuotes = false; i++; continue;
+          }
+          field += c; i++; continue;
+        }
+        if(c === '"'){ inQuotes = true; i++; continue; }
+        if(c === ','){ row.push(field); field = ''; i++; continue; }
+        if(c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; i++; continue; }
+        field += c; i++;
+      }
+      if(field.length > 0 || row.length > 0){ row.push(field); rows.push(row); }
+      return rows;
+    }
+
+    // Cari indeks kolom dari header berdasarkan beberapa kemungkinan nama
+    function findCol(headers, names){
+      for(var j=0;j<headers.length;j++){
+        var h = String(headers[j]).trim().toLowerCase();
+        for(var k=0;k<names.length;k++){
+          if(h === names[k] || h.indexOf(names[k]) !== -1) return j;
+        }
+      }
+      return -1;
+    }
+
+    function render(items){
+      if(!items.length){
+        track.innerHTML = '<div class="testi-empty">Belum ada testimoni untuk ditampilkan.</div>';
+        if(hint) hint.style.display = 'none';
+        return;
+      }
+      var html = '';
+      items.forEach(function(it, idx){
+        var grad = AVA_GRADIENTS[idx % AVA_GRADIENTS.length];
+        var meta = [it.kota, it.platform].filter(Boolean).join(' · ');
+        html += '<div class="testi">'
+              +   '<div class="stars">' + stars(it.bintang) + '</div>'
+              +   '<p>"' + esc(it.testimoni) + '"</p>'
+              +   '<div class="who"><span class="ava" style="background:' + grad + '">'
+              +      esc(initials(it.nama)) + '</span><div>'
+              +      '<div class="nm">' + esc(it.nama || 'Anonim') + '</div>'
+              +      '<div class="mt">' + esc(meta) + '</div>'
+              +   '</div></div>'
+              + '</div>';
+      });
+      track.innerHTML = html;
+      if(hint) hint.style.display = items.length > 1 ? '' : 'none';
+    }
+
+    fetch(CSV_URL, { cache: 'no-store' })
+      .then(function(r){
+        if(!r.ok) throw new Error('HTTP ' + r.status);
+        return r.text();
+      })
+      .then(function(text){
+        var rows = parseCSV(text).filter(function(r){
+          return r.some(function(c){ return String(c).trim() !== ''; });
+        });
+        if(rows.length < 2){ render([]); return; }
+
+        var headers = rows[0];
+        var iNama = findCol(headers, ['nama','name']);
+        var iKota = findCol(headers, ['kota','city','asal']);
+        var iPlat = findCol(headers, ['platform','sosmed','media']);
+        var iStar = findCol(headers, ['bintang','rating','star']);
+        var iText = findCol(headers, ['testimoni','testimonial','ulasan','komentar','review','pesan']);
+
+        // Fallback jika header tidak dikenali: pakai urutan kolom default
+        if(iNama < 0) iNama = 0;
+        if(iKota < 0) iKota = 1;
+        if(iPlat < 0) iPlat = 2;
+        if(iStar < 0) iStar = 3;
+        if(iText < 0) iText = 4;
+
+        var items = [];
+        for(var r=1;r<rows.length;r++){
+          var row = rows[r];
+          var testimoni = (row[iText] || '').trim();
+          var nama = (row[iNama] || '').trim();
+          if(!testimoni && !nama) continue; // lewati baris kosong
+          items.push({
+            nama: nama,
+            kota: (row[iKota] || '').trim(),
+            platform: (row[iPlat] || '').trim(),
+            bintang: (row[iStar] || '').trim(),
+            testimoni: testimoni
+          });
+        }
+        render(items);
+      })
+      .catch(function(err){
+        console.error('Gagal memuat testimoni:', err);
+        track.innerHTML = '<div class="testi-empty">Testimoni belum dapat dimuat saat ini.</div>';
+        if(hint) hint.style.display = 'none';
+      });
   })();
 
   // ====== FAQ ACCORDION ======

@@ -126,51 +126,61 @@ button,input,select,textarea{font:inherit;color:inherit}
 /* ---------- Hero ---------- */
 .hero{position:relative;overflow:hidden;background:
   radial-gradient(60% 70% at 85% 10%,#FFDCF0 0%,rgba(255,220,240,0) 70%),
-  radial-gradient(50% 60% at 0% 100%,#FFEAF5 0%,rgba(255,234,245,0) 70%),var(--pink-50);padding:var(--s6) 0 var(--s7)}
+  radial-gradient(50% 60% at 0% 100%,#FFEAF5 0%,rgba(255,234,245,0) 70%),var(--pink-50);padding:var(--s6) 0}
 .hero__grid{display:grid;gap:var(--s6);align-items:center}
-.hero h1{font-size:clamp(2.1rem,1.2rem + 3.6vw,3.4rem);font-weight:800;letter-spacing:-.02em;color:var(--plum-900);margin-bottom:var(--s4)}
+.hero h1{font-size:clamp(2rem,1.2rem + 3.4vw,3.25rem);font-weight:800;letter-spacing:-.02em;color:var(--plum-900);margin-bottom:var(--s3)}
 .hero h1 .hl{color:var(--pink-700);display:block}
-.hero__lead{font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);color:var(--muted);max-width:34em}
+.hero__lead{font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);color:var(--muted);max-width:32em}
 .hero__lead strong{color:var(--plum)}
-.hero__ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin:var(--s5) 0}
+.hero__ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin:var(--s5) 0 var(--s4)}
 .hero__ctas .btn{flex:1 1 auto}
 @media(min-width:480px){.hero__ctas .btn{flex:0 0 auto}}
+.perks{list-style:none;margin:0 0 var(--s4);padding:0;display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);font-size:.9375rem;font-weight:600;color:var(--plum)}
+.perks li{display:flex;align-items:center;gap:.4rem}
+.perks svg{color:var(--ok);width:1.1em;height:1.1em}
 .notice{display:flex;gap:var(--s3);align-items:flex-start;padding:var(--s3) var(--s4);border-radius:var(--r);background:#fff;border:1px dashed var(--pink-500);font-size:.9375rem;color:var(--plum);max-width:34em}
 .notice svg{color:var(--pink-600);margin-top:.15rem}
 .notice p{margin:0}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s2);margin-top:var(--s5);max-width:34em}
+.kpi{padding:var(--s3) var(--s2);border-radius:var(--r);background:#fff;border:1px solid var(--line);text-align:center}
+.kpi b{display:block;font-family:var(--f-head);font-weight:800;font-size:clamp(1.25rem,1rem + 1vw,1.6rem);color:var(--pink-700);line-height:1.15}
+.kpi span{font-size:.8125rem;color:var(--muted);font-weight:600}
 
-.hero__art{position:relative;min-height:400px;display:grid;place-items:center}
-.blob{position:absolute;inset:6% 4%;border-radius:46% 54% 42% 58%/55% 45% 55% 45%;background:var(--grad);opacity:.95;filter:saturate(1.05);animation:morph 14s ease-in-out infinite}
-@keyframes morph{50%{border-radius:58% 42% 55% 45%/45% 58% 42% 55%}}
-.phone{position:relative;width:min(260px,70%);background:#fff;border-radius:36px;border:8px solid var(--plum-900);box-shadow:var(--sh-lg);padding:var(--s5) var(--s4);display:flex;flex-direction:column;gap:var(--s3);transform:rotate(-4deg)}
-.phone::before{content:"";position:absolute;top:8px;left:50%;width:70px;height:18px;border-radius:12px;background:var(--plum-900);transform:translateX(-50%)}
-.phone__logo{width:96px;margin:var(--s3) auto 0}
-.phone__label{font-size:.75rem;color:var(--muted);text-align:center;margin:0}
-.phone__acc{display:flex;align-items:center;gap:var(--s2);padding:var(--s2) var(--s3);border-radius:var(--r-sm);background:var(--pink-50);font-weight:700;font-size:.875rem;color:var(--plum)}
-.phone__acc .tile{width:32px;height:32px;border-radius:9px}
-.phone__acc .tile svg{width:18px;height:18px}
-.phone__acc small{display:block;font-weight:500;color:var(--muted);font-size:.75rem}
-.phone__price{font-family:var(--f-head);font-weight:800;font-size:1.6rem;color:var(--pink-700);text-align:center;line-height:1}
-.phone__bar{height:8px;border-radius:8px;background:var(--pink-100);overflow:hidden}
-.phone__bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:inherit;transition:width 1.2s cubic-bezier(.2,.7,.3,1)}
-.phone__ins{list-style:none;margin:0;padding:var(--s3);border-radius:var(--r-sm);border:1px solid var(--line);display:grid;gap:.45rem}
-.phone__ins li{display:grid;grid-template-columns:5.2rem 1fr;align-items:center;gap:.5rem;font-size:.6875rem;color:var(--muted);font-weight:600}
-.phone__ins b{display:block;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--pink-500) var(--w),var(--pink-100) var(--w))}
-.phone__status{display:flex;align-items:center;justify-content:center;gap:.35rem;font-size:.8125rem;font-weight:700;color:var(--ok);background:var(--ok-bg);border-radius:var(--r-pill);padding:.35rem .6rem;margin-top:auto}
-.phone__cta{border-radius:var(--r-pill);background:var(--grad-btn);color:#fff;text-align:center;font-weight:700;font-size:.875rem;padding:.6rem}
+/* Mockup HP di hero: ukuran tetap, isi tidak mengubah tinggi */
+.hero__art{display:none}
+.blob{position:absolute;inset:4% 6%;border-radius:46% 54% 42% 58%/55% 45% 55% 45%;background:var(--grad)}
+.phone{position:relative;width:270px;height:540px;flex:none;background:#fff;border-radius:40px;border:9px solid var(--plum-900);box-shadow:var(--sh-lg);padding:44px 18px 20px;display:grid;grid-template-rows:auto 20px 60px 44px 10px 96px 1fr 40px;gap:10px;overflow:hidden}
+.phone::before{content:"";position:absolute;top:10px;left:50%;width:76px;height:20px;border-radius:12px;background:var(--plum-900);transform:translateX(-50%)}
+.phone__logo{width:104px;height:auto;margin:0 auto}
+.phone__label{font-size:.75rem;color:var(--muted);text-align:center;margin:0;line-height:20px}
+.phone__acc{display:grid;grid-template-columns:36px 1fr;align-items:center;gap:10px;padding:0 12px;border-radius:14px;background:var(--pink-50);min-width:0}
+.phone__acc .tile{width:36px;height:36px;border-radius:10px}
+.phone__acc .tile svg{width:20px;height:20px}
+.phone__acc b,.phone__acc small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phone__acc b{font-size:.875rem;color:var(--plum)}
+.phone__acc small{font-size:.75rem;color:var(--muted)}
+.phone__price{font-family:var(--f-head);font-weight:800;font-size:1.55rem;color:var(--pink-700);text-align:center;line-height:44px;white-space:nowrap;overflow:hidden;font-variant-numeric:tabular-nums}
+.phone__bar{border-radius:8px;background:var(--pink-100);overflow:hidden}
+.phone__bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:inherit;transition:width 900ms cubic-bezier(.2,.7,.3,1)}
+.phone__ins{list-style:none;margin:0;padding:12px;border-radius:14px;border:1px solid var(--line);display:grid;align-content:space-between}
+.phone__ins li{display:grid;grid-template-columns:84px 1fr;align-items:center;gap:8px;font-size:.6875rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.phone__ins b{display:block;height:6px;border-radius:6px;background:var(--pink-100);overflow:hidden}
+.phone__ins b i{display:block;height:100%;width:var(--w);background:var(--pink-500);border-radius:inherit;transition:width 900ms ease}
+.phone__status{align-self:end;display:flex;align-items:center;justify-content:center;gap:.35rem;height:32px;font-size:.8125rem;font-weight:700;color:var(--ok);background:var(--ok-bg);border-radius:var(--r-pill)}
+.phone__cta{display:grid;place-items:center;border-radius:var(--r-pill);background:var(--grad-btn);color:#fff;font-weight:700;font-size:.875rem}
+.phone .swap{transition:opacity 250ms ease}
+.phone.is-swapping .swap{opacity:0}
 .float{position:absolute;border-radius:18px;box-shadow:var(--sh);display:grid;place-items:center;animation:bob 6s ease-in-out infinite}
 .float svg{width:55%;height:55%}
-.float--ig{width:68px;height:68px;top:6%;left:8%}
-.float--tt{width:60px;height:60px;top:4%;right:14%;animation-delay:-1.5s}
-.float--yt{width:64px;height:64px;bottom:14%;left:4%;animation-delay:-3s}
-.float--wa{width:70px;height:70px;bottom:8%;right:6%;animation-delay:-4.5s}
-@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}
-.hand-note{position:absolute;left:0;top:44%;max-width:9.5rem;line-height:1.25;font-family:var(--f-head);font-style:italic;font-weight:600;color:#fff;background:var(--plum);padding:.4rem .8rem;border-radius:12px 12px 12px 2px;font-size:.875rem;transform:rotate(-6deg);box-shadow:var(--sh)}
-@media(min-width:900px){
-  .hero{padding:var(--s7) 0 var(--s8)}
-  .hero__grid{grid-template-columns:1.1fr .9fr}
-  .hero__art{min-height:520px}
-  .hand-note{left:-2%}
+.float--ig{width:64px;height:64px;top:8%;left:6%}
+.float--tt{width:58px;height:58px;top:6%;right:8%;animation-delay:-1.5s}
+.float--yt{width:60px;height:60px;bottom:12%;left:4%;animation-delay:-3s}
+.float--wa{width:64px;height:64px;bottom:8%;right:6%;animation-delay:-4.5s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@media(min-width:960px){
+  .hero{padding:var(--s7) 0}
+  .hero__grid{grid-template-columns:1.15fr .85fr}
+  .hero__art{position:relative;display:grid;place-items:center;height:600px}
 }
 
 /* Platform tile colors */
@@ -179,43 +189,6 @@ button,input,select,textarea{font:inherit;color:inherit}
 .tile--tt{background:#111}
 .tile--yt{background:#FF0000}
 .tile--wa{background:#25D366}
-
-/* ---------- Trust strip ---------- */
-.trust{margin-top:calc(var(--s6) * -1);position:relative;z-index:2}
-.trust__list{list-style:none;margin:0;padding:var(--s4);display:grid;gap:var(--s3);grid-template-columns:1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh)}
-.trust__item{display:flex;gap:var(--s3);align-items:center;padding:var(--s2)}
-.trust__ic{width:48px;height:48px;border-radius:14px;background:var(--pink-100);color:var(--pink-700);display:grid;place-items:center;flex:none}
-.trust__item h3{font-size:1rem;margin:0}
-.trust__item p{font-size:.875rem;color:var(--muted);margin:0}
-@media(min-width:600px){.trust__list{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.trust__list{grid-template-columns:repeat(4,1fr);padding:var(--s5)}}
-
-/* ---------- Stats ---------- */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s6);text-align:center}
-.stat{padding:var(--s4) var(--s2);border-radius:var(--r);background:var(--pink-50)}
-.stat__num{font-family:var(--f-head);font-weight:800;font-size:clamp(1.5rem,1rem + 2vw,2.25rem);color:var(--pink-700);line-height:1.1}
-.stat__lbl{font-size:.875rem;color:var(--muted);font-weight:600}
-
-/* ---------- Platform cards ---------- */
-.plats{display:grid;gap:var(--s4);grid-template-columns:1fr}
-@media(min-width:600px){.plats{grid-template-columns:1fr 1fr}}
-@media(min-width:1100px){.plats{grid-template-columns:repeat(4,1fr)}}
-.plat{position:relative;display:flex;flex-direction:column;gap:var(--s3);padding:var(--s5);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--sh-sm);overflow:hidden;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
-.plat::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:var(--plat-tint,var(--pink-100));opacity:.7;transition:transform 400ms ease}
-.plat:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:var(--pink-200)}
-.plat:hover::after{transform:scale(1.25)}
-.plat--ig{--plat-tint:#FFE3EF}.plat--tt{--plat-tint:#DFF8F7}.plat--yt{--plat-tint:#FFE4E4}.plat--wa{--plat-tint:#E2F8EA}
-.plat__top{display:flex;align-items:center;gap:var(--s3);position:relative;z-index:1}
-.plat__top .tile{width:52px;height:52px;border-radius:15px}
-.plat__top .tile svg{width:28px;height:28px}
-.plat h3{font-size:1.25rem;margin:0}
-.plat__sub{font-size:.875rem;color:var(--muted);margin:0}
-.plat ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem;font-size:.9375rem;position:relative;z-index:1}
-.plat li{display:flex;gap:.5rem;align-items:flex-start}
-.plat li svg{color:var(--ok);margin-top:.2rem;width:1.05em;height:1.05em}
-.plat__min{display:inline-block;align-self:flex-start;font-weight:700;font-size:.8125rem;padding:.3rem .7rem;border-radius:var(--r-pill);background:var(--pink-50);color:var(--pink-700);border:1px solid var(--line);position:relative;z-index:1}
-.plat__acts{display:flex;flex-wrap:wrap;gap:var(--s2);margin-top:auto;position:relative;z-index:1}
-.plat__acts .btn{flex:1 1 auto}
 
 /* ---------- Kalkulator ---------- */
 .calc{display:grid;gap:var(--s5);background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh);padding:var(--s5)}
@@ -254,7 +227,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;heigh
 input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:#fff;border:4px solid var(--pink-600)}
 input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 .chips{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.chip{min-height:44px;padding:.4rem .9rem;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-weight:600;font-size:.875rem;cursor:pointer;transition:background var(--t),border-color var(--t),color var(--t)}
+.chip{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:.4rem .9rem;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-weight:600;font-size:.875rem;cursor:pointer;transition:background var(--t),border-color var(--t),color var(--t)}
 .chip:hover{background:var(--pink-50);border-color:var(--pink-200);color:var(--pink-700)}
 .result{display:flex;flex-direction:column;gap:var(--s3);padding:var(--s5);border-radius:var(--r-lg);background:linear-gradient(160deg,#FFF0F8 0%,#FFE1F0 100%);border:1px solid var(--pink-200)}
 .result__lbl{font-weight:700;color:var(--pink-700);font-size:.9375rem;margin:0}
@@ -267,71 +240,143 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 .result .btn{margin-top:auto}
 .result__review{font-size:.9375rem;color:var(--plum);margin:0}
 
-/* ---------- Langkah / alur ---------- */
-.flow{list-style:none;margin:0;padding:0;display:grid;gap:var(--s4);counter-reset:f}
-@media(min-width:700px){.flow{grid-template-columns:1fr 1fr}}
-@media(min-width:1100px){.flow{grid-template-columns:repeat(3,1fr)}}
-.flow>li{position:relative;padding:var(--s5);padding-top:calc(var(--s5) + 8px);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);transition:transform var(--t),box-shadow var(--t)}
+/* ---------- Langkah / alur (ringkas) ---------- */
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3);grid-template-columns:1fr}
+@media(min-width:640px){.flow{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.flow{grid-template-columns:repeat(4,1fr)}}
+.flow>li{display:grid;grid-template-columns:44px 1fr;gap:var(--s3);align-items:start;padding:var(--s4);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);transition:transform var(--t),box-shadow var(--t)}
 .flow>li:hover{transform:translateY(-3px);box-shadow:var(--sh)}
-.flow__n{position:absolute;top:-18px;left:var(--s5);width:44px;height:44px;border-radius:14px;background:var(--grad);color:#fff;font-family:var(--f-head);font-weight:800;display:grid;place-items:center;box-shadow:0 8px 18px -8px rgba(214,19,111,.8)}
-.flow h3{font-size:1.125rem;margin-top:var(--s2)}
-.flow p,.flow ul{font-size:.9375rem;color:var(--muted);margin:0}
-.flow ul{padding-left:1.1rem;margin-top:.4rem;list-style:disc}
-.flow-note{display:flex;gap:var(--s3);align-items:center;margin-top:var(--s5);padding:var(--s4);border-radius:var(--r);background:var(--ok-bg);color:#0B5E33;font-weight:600}
+.flow__n{width:44px;height:44px;border-radius:14px;background:var(--grad);color:#fff;font-family:var(--f-head);font-weight:800;display:grid;place-items:center}
+.flow h3{font-size:1.0625rem;margin:0 0 .25rem}
+.flow p{font-size:.9375rem;color:var(--muted);margin:0}
 
-/* ---------- Tutorial ---------- */
-.tabs{display:flex;gap:var(--s2);overflow-x:auto;padding:4px 4px var(--s2);margin:0 -4px var(--s5);scrollbar-width:thin}
-.tab{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:.5rem 1.1rem .5rem .5rem;border-radius:var(--r-pill);border:2px solid var(--line);background:#fff;font-weight:700;cursor:pointer;white-space:nowrap;transition:border-color var(--t),background var(--t),color var(--t)}
-.tab .tile{width:34px;height:34px;border-radius:50%}
-.tab .tile svg{width:18px;height:18px}
+/* ---------- Tutorial interaktif ---------- */
+.tut-app[hidden],.js .tut-static,.testi-nav[hidden],.addon[hidden]{display:none}
+.tut-static details{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:var(--s3) var(--s4);margin-bottom:var(--s2)}
+.tut-static summary{font-weight:700;color:var(--plum);cursor:pointer;min-height:44px;display:flex;align-items:center}
+.tut-static ol{margin:0 0 var(--s3);padding-left:1.25rem;color:var(--muted)}
+.pick{display:grid;gap:var(--s3);margin-bottom:var(--s5)}
+.pick__lbl{font-size:.8125rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0}
+.tabs{display:flex;gap:var(--s2);overflow-x:auto;padding:4px;margin:-4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar,.topics::-webkit-scrollbar{display:none}
+.tab{display:inline-flex;align-items:center;gap:.55rem;min-height:52px;padding:.45rem 1rem .45rem .45rem;border-radius:var(--r-pill);border:2px solid var(--line);background:#fff;font-weight:700;cursor:pointer;white-space:nowrap;flex:none;transition:border-color var(--t),background var(--t),color var(--t),transform var(--t)}
+.tab .tile{width:36px;height:36px;border-radius:50%}
+.tab .tile svg{width:19px;height:19px}
 .tab:hover{border-color:var(--pink-200);background:var(--pink-50)}
+.tab:active{transform:scale(.97)}
 .tab[aria-selected="true"]{border-color:var(--pink-600);background:var(--pink-600);color:#fff}
-.tab__count{font-size:.75rem;font-weight:700;padding:.1rem .45rem;border-radius:var(--r-pill);background:var(--pink-100);color:var(--pink-700)}
-.tab[aria-selected="true"] .tab__count{background:rgba(255,255,255,.22);color:#fff}
-.tpanel{display:grid;gap:var(--s5)}
-.tpanel+.tpanel{margin-top:var(--s7)}
-.js .tpanel+.tpanel{margin-top:0}
-.tpanel[hidden],.tabs[hidden],.topics[hidden],.testi-nav[hidden],.addon[hidden]{display:none}
-@media(min-width:960px){.tpanel{grid-template-columns:280px 1fr}}
-.topics{display:flex;gap:var(--s2);overflow-x:auto;padding:2px;list-style:none;margin:0}
-@media(min-width:960px){.topics{flex-direction:column;overflow:visible}}
-.topic{display:flex;align-items:center;gap:.6rem;width:100%;min-height:52px;padding:.6rem .9rem;border-radius:14px;border:1px solid var(--line);background:#fff;text-align:left;font-weight:600;font-size:.9375rem;cursor:pointer;white-space:nowrap;transition:background var(--t),border-color var(--t),color var(--t)}
-@media(min-width:960px){.topic{white-space:normal}}
+.topics{display:flex;gap:var(--s2);overflow-x:auto;padding:4px;margin:-4px;list-style:none;scrollbar-width:none}
+.topic{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.4rem .95rem;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-weight:600;font-size:.9375rem;cursor:pointer;white-space:nowrap;flex:none;transition:background var(--t),border-color var(--t),color var(--t)}
 .topic:hover{background:var(--pink-50)}
-.topic[aria-pressed="true"]{background:var(--pink-100);border-color:var(--pink-600);color:var(--pink-700)}
-.topic__badge{margin-left:auto;font-size:.75rem;color:var(--muted);font-weight:700;white-space:nowrap}
-.topic__done{display:none;color:var(--ok)}
-.topic.is-done .topic__done{display:inline}
-.guide{display:grid;gap:var(--s5);padding:var(--s5);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--sh-sm)}
-.guide[hidden]{display:none}
-.guides{display:grid;gap:var(--s4)}
-@media(min-width:720px){.guide{grid-template-columns:1fr 220px;align-items:start}}
-.guide__head{grid-column:1/-1}
-.guide__badge{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.06em;padding:.25rem .65rem;border-radius:var(--r-pill);background:#FFD84D;color:#4A2A00;margin-bottom:var(--s2)}
-.guide h3{font-size:clamp(1.2rem,1rem + .8vw,1.5rem)}
-.progress{display:flex;align-items:center;gap:var(--s3);font-size:.875rem;font-weight:700;color:var(--plum)}
-.progress__bar{flex:1;height:10px;border-radius:10px;background:var(--pink-100);overflow:hidden}
-.progress__bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:inherit;transition:width 300ms ease}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:var(--s2);counter-reset:s}
-.step label{display:flex;gap:var(--s3);align-items:flex-start;padding:.7rem .8rem;border-radius:14px;border:1px solid var(--line);cursor:pointer;transition:background var(--t),border-color var(--t)}
-.step label:hover{background:var(--pink-50)}
-.step input{position:absolute;opacity:0;width:1px;height:1px}
-.step__n{counter-increment:s;flex:none;width:32px;height:32px;border-radius:10px;background:var(--pink-100);color:var(--pink-700);font-weight:800;font-family:var(--f-head);display:grid;place-items:center;font-size:.9375rem;transition:background var(--t),color var(--t)}
-.step__n::before{content:counter(s)}
-.step input:checked+label{background:var(--ok-bg);border-color:#A9E1C3}
-.step input:checked+label .step__n{background:var(--ok);color:#fff}
-.step input:checked+label .step__n::before{content:"✓"}
-.step input:checked+label .step__t{color:#0B5E33}
-.step input:focus-visible+label{outline:3px solid var(--pink-500);outline-offset:2px}
-.step__t{font-size:.9375rem;padding-top:.2rem}
-.guide__side{display:grid;gap:var(--s3)}
-.thumb{position:relative;display:block;width:100%;padding:0;border:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:var(--pink-100);box-shadow:var(--sh-sm)}
-.thumb img{width:100%;aspect-ratio:1080/1790;object-fit:cover;transition:transform 400ms ease}
-.thumb:hover img{transform:scale(1.04)}
-.thumb span{position:absolute;left:8px;right:8px;bottom:8px;display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.5rem;border-radius:var(--r-pill);background:rgba(58,7,34,.85);color:#fff;font-weight:700;font-size:.8125rem}
-.done-msg{display:none;gap:var(--s3);align-items:center;padding:var(--s3) var(--s4);border-radius:var(--r);background:var(--ok-bg);color:#0B5E33;font-weight:600;font-size:.9375rem;grid-column:1/-1}
-.guide.is-complete .done-msg{display:flex}
-.done-msg p{margin:0;flex:1}
+.topic[aria-pressed="true"]{background:var(--plum-900);border-color:var(--plum-900);color:#fff}
+.topic small{font-weight:700;opacity:.75}
+.topic .ok{display:none;width:1.05em;height:1.05em;color:var(--ok)}
+.topic[aria-pressed="true"] .ok{color:#7CE3A8}
+.topic.is-done .ok{display:inline}
+
+.player{display:grid;gap:var(--s5);align-items:center;padding:var(--s4);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--sh)}
+@media(min-width:860px){.player{grid-template-columns:auto 1fr;padding:var(--s6);gap:var(--s7)}}
+.sim-wrap{display:grid;place-items:center;position:relative}
+.sim-wrap::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--pink-100);top:50%;left:50%;transform:translate(-50%,-50%)}
+
+/* HP simulasi — ukuran tetap */
+.sim{position:relative;width:264px;height:528px;flex:none;border-radius:40px;border:9px solid #1E0612;background:#fff;box-shadow:var(--sh-lg);overflow:hidden;display:grid;grid-template-rows:34px 52px 1fr;touch-action:pan-y;user-select:none}
+.sim::before{content:"";position:absolute;top:8px;left:50%;width:70px;height:18px;border-radius:12px;background:#1E0612;transform:translateX(-50%);z-index:5}
+.sim__status{display:flex;justify-content:space-between;align-items:center;padding:0 18px;font-size:.6875rem;font-weight:700;color:#222}
+.sim__bar{display:flex;align-items:center;gap:10px;padding:0 14px;border-bottom:1px solid #f1e6ec;min-width:0}
+.sim__bar .tile{width:28px;height:28px;border-radius:8px}
+.sim__bar .tile svg{width:16px;height:16px}
+.sim__bar b{font-size:.875rem;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sim__bar .back{width:18px;height:18px;color:#444;flex:none}
+.sim__screen{position:relative;overflow:hidden;padding:14px}
+.scene{position:absolute;inset:14px;display:flex;flex-direction:column;gap:10px;animation:sceneIn 320ms ease both}
+@keyframes sceneIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.player.back .scene{animation-name:sceneBack}
+@keyframes sceneBack{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+.ghost{display:block;height:10px;border-radius:6px;background:#F1E6EC}
+.ghost.w60{width:60%}.ghost.w40{width:40%}.ghost.w80{width:80%}
+.row{display:flex;align-items:center;gap:10px;height:44px;padding:0 10px;border-radius:12px;background:#FAF5F8;flex:none;min-width:0}
+.row i{width:22px;height:22px;border-radius:7px;background:#EADCE4;flex:none}
+.row span{font-size:.8125rem;font-weight:700;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.target{position:relative;background:var(--pink-100);box-shadow:0 0 0 2px var(--pink-600) inset}
+.target i{background:var(--pink-500)}
+.target span{color:var(--pink-700)}
+.tap{position:absolute;right:14px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:rgba(214,19,111,.35);pointer-events:none}
+.tap::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--pink-600);animation:ring 1.3s ease-out infinite}
+@keyframes ring{from{transform:scale(.6);opacity:1}to{transform:scale(1.7);opacity:0}}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 8px;margin-top:6px}
+.app{display:grid;justify-items:center;gap:4px;font-size:.625rem;color:#555;position:relative}
+.app i{width:44px;height:44px;border-radius:13px;background:#EFE4EA}
+.app .tile{width:44px;height:44px;border-radius:13px}
+.app .tile svg{width:24px;height:24px}
+.app.target{background:none;box-shadow:none}
+.app.target span{color:var(--pink-700);font-weight:800}
+.app.target .tap{right:auto;left:50%;top:22px;margin-left:-13px}
+.tabsim{display:flex;border-bottom:1px solid #F1E6EC;flex:none}
+.tabsim span{flex:1;text-align:center;font-size:.75rem;font-weight:700;color:#999;padding:10px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.tabsim .on{color:var(--pink-700);box-shadow:0 -3px 0 var(--pink-600) inset;background:var(--pink-50)}
+.tabsim .on .tap,.chips-s .on .tap{right:2px;top:auto;bottom:-8px;width:18px;height:18px;margin:0}
+.chart{display:flex;align-items:flex-end;gap:6px;height:90px;padding:8px;border-radius:12px;background:#FAF5F8;flex:none}
+.chart b{flex:1;border-radius:4px 4px 0 0;background:#EBD3E0}
+.chart b:nth-child(3n){background:var(--pink-500)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:none}
+.card-s{padding:10px;border-radius:12px;background:#FAF5F8;min-width:0}
+.card-s small{display:block;font-size:.625rem;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-s b{font-size:1rem;color:#222;font-family:var(--f-head)}
+.card-s.focus{background:var(--pink-100);box-shadow:0 0 0 2px var(--pink-600) inset}
+.loupe{position:absolute;right:10px;bottom:10px;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:var(--r-pill);background:var(--plum-900);color:#fff;font-size:.6875rem;font-weight:700;max-width:calc(100% - 20px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.loupe svg{width:14px;height:14px;flex:none}
+.chips-s{display:flex;gap:6px;flex:none}
+.chips-s span{flex:1;text-align:center;padding:8px 2px;border-radius:var(--r-pill);border:1px solid #EADCE4;font-size:.6875rem;font-weight:700;color:#777;position:relative;white-space:nowrap}
+.chips-s .on{background:var(--pink-600);border-color:var(--pink-600);color:#fff}
+.scroller{display:flex;flex-direction:column;gap:8px;animation:scrollUp 1.4s ease-in-out both}
+@keyframes scrollUp{from{transform:translateY(90px)}to{transform:none}}
+.hint-down{align-self:center;display:flex;flex-direction:column;align-items:center;font-size:.625rem;color:#999;font-weight:700;margin-top:auto}
+.hint-down svg{width:16px;height:16px;transform:rotate(90deg);animation:bob 1.2s ease-in-out infinite}
+.flash{position:absolute;inset:-14px;background:#fff;animation:flash 900ms ease-out both;pointer-events:none}
+@keyframes flash{0%{opacity:0}15%{opacity:1}100%{opacity:0}}
+.shot-toast{position:absolute;left:0;right:0;bottom:4px;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;background:#1E0612;color:#fff;font-size:.75rem;font-weight:700;animation:sceneIn 400ms 500ms ease both}
+.shot-toast svg{width:18px;height:18px;color:#7CE3A8;flex:none}
+.shot-frame{position:absolute;inset:-4px;border:3px dashed var(--pink-500);border-radius:14px;pointer-events:none;animation:sceneIn 300ms 300ms both}
+.chat{display:flex;flex-direction:column;gap:8px;padding:10px;border-radius:12px;background:#EFE7DD;flex:1}
+.bub{max-width:80%;padding:8px 10px;border-radius:12px;font-size:.6875rem;line-height:1.35;background:#fff;color:#222}
+.bub.me{align-self:flex-end;background:#D9FDD3;animation:sceneIn 400ms 400ms both}
+.bub.img{padding:4px;width:120px}
+.bub.img i{display:block;height:84px;border-radius:9px;background:linear-gradient(160deg,#B71B6B,#FF2D8B)}
+.bub small{display:block;text-align:right;color:#53BDEB;font-weight:800;font-size:.625rem}
+.sendbar{display:flex;gap:6px;align-items:center}
+.sendbar span{flex:1;height:30px;border-radius:15px;background:#fff}
+.sendbar b{width:30px;height:30px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#fff}
+.sendbar b svg{width:14px;height:14px}
+
+/* Panel langkah */
+.panel{display:flex;flex-direction:column;gap:var(--s4);min-width:0}
+.panel__badge{align-self:flex-start;font-size:.75rem;font-weight:800;letter-spacing:.06em;padding:.25rem .65rem;border-radius:var(--r-pill);background:#FFD84D;color:#4A2A00}
+.panel h3{font-size:clamp(1.15rem,1rem + .7vw,1.45rem);margin:0}
+.meter{display:flex;align-items:center;gap:var(--s3);font-size:.875rem;font-weight:700;color:var(--plum)}
+.meter__bar{flex:1;height:10px;border-radius:10px;background:var(--pink-100);overflow:hidden}
+.meter__bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:inherit;transition:width 300ms ease}
+.stepcard{display:grid;grid-template-columns:52px 1fr;gap:var(--s3);align-items:start;min-height:9.5rem;padding:var(--s4);border-radius:var(--r);background:var(--pink-50);border:1px solid var(--line)}
+.stepcard__n{width:52px;height:52px;border-radius:16px;background:var(--grad);color:#fff;font-family:var(--f-head);font-weight:800;font-size:1.35rem;display:grid;place-items:center}
+.stepcard__t{font-size:clamp(1.0625rem,1rem + .35vw,1.2rem);font-weight:600;color:var(--ink);margin:0 0 .5rem;line-height:1.5}
+.stepcard__k{display:inline-flex;align-items:center;gap:.35rem;font-size:.8125rem;font-weight:700;color:var(--pink-700);background:#fff;border:1px solid var(--line);border-radius:var(--r-pill);padding:.2rem .65rem}
+.stepcard__k svg{width:1em;height:1em}
+.ctrl{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s2);align-items:center}
+.dots{display:flex;flex-wrap:wrap;justify-content:center;gap:2px}
+.dot{width:28px;height:28px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center;border-radius:50%}
+.dot::before{content:"";width:10px;height:10px;border-radius:50%;background:#EBD3E0;transition:transform var(--t),background var(--t)}
+.dot.seen::before{background:#F29BC4}
+.dot[aria-current="step"]::before{background:var(--pink-600);transform:scale(1.35)}
+.dot:hover::before{background:var(--pink-500)}
+.panel__tools{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center}
+.kbd-hint{font-size:.8125rem;color:var(--muted);margin:0}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.finish{display:none;flex-direction:column;gap:var(--s3);padding:var(--s5);border-radius:var(--r);background:var(--ok-bg);border:1px solid #A9E1C3;color:#0B5E33;animation:sceneIn 300ms ease both}
+.finish h4{font-family:var(--f-head);font-size:1.25rem;color:#0B5E33;margin:0;display:flex;gap:.5rem;align-items:center}
+.finish p{margin:0}
+.finish .row-btn{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.player.is-done .finish{display:flex}
+.player.is-done .stepcard,.player.is-done .ctrl{display:none}
 
 dialog.lightbox{border:0;padding:0;background:transparent;max-width:min(92vw,480px);max-height:92vh;overflow:visible}
 dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)}
@@ -341,6 +386,23 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
 .lightbox__bar p{margin:0;font-weight:700;color:var(--plum);font-size:.9375rem;flex:1}
 .icon-btn{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;color:var(--plum);flex:none}
 .icon-btn:hover{background:var(--pink-50)}
+/* Mobile: teks langkah & tombol di atas, HP diperkecil, tinggi stabil */
+@media(max-width:859px){
+  .panel{display:contents}
+  .player{grid-template-columns:1fr;gap:var(--s3)}
+  .panel__badge{order:1}.panel h3{order:2}.meter{order:3}.stepcard{order:4}.ctrl{order:5}.finish{order:5}.sim-wrap{order:6}.panel__tools{order:7}.kbd-hint{order:8}
+  .panel h3{min-height:2.6em}
+  .stepcard{grid-template-columns:40px 1fr;min-height:12.5rem;align-content:start;padding:var(--s3)}
+  .stepcard__n{width:40px;height:40px;border-radius:12px;font-size:1.1rem}
+  .stepcard__t{font-size:1rem}
+  .ctrl{grid-template-columns:1fr 1fr;grid-template-areas:"dots dots" "prev next"}
+  .ctrl #tPrev{grid-area:prev}.ctrl #tNext{grid-area:next}.dots{grid-area:dots;flex-wrap:nowrap}
+  .dot{width:24px;height:28px}
+  .sim-wrap{height:440px;align-items:start}
+  .sim-wrap::before{top:220px}
+  .sim{transform:scale(.82);transform-origin:top center}
+}
+@media(max-width:380px){.sim{width:264px;height:528px}.sim-wrap::before{width:260px;height:260px}}
 
 /* ---------- Form pengajuan ---------- */
 .sell{display:grid;gap:var(--s5)}
@@ -369,28 +431,6 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
 .preview{margin-top:var(--s4)}
 .preview summary{cursor:pointer;font-weight:700;color:var(--pink-700);min-height:44px;display:flex;align-items:center}
 .preview pre{white-space:pre-wrap;word-break:break-word;background:var(--pink-50);border-radius:12px;padding:var(--s4);font-family:var(--f-body);font-size:.875rem;margin:0;max-height:260px;overflow:auto}
-
-/* ---------- Kenapa / review ---------- */
-.why{display:grid;gap:var(--s4);grid-template-columns:1fr}
-@media(min-width:640px){.why{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.why{grid-template-columns:repeat(3,1fr)}}
-.card{padding:var(--s5);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);transition:transform var(--t),box-shadow var(--t)}
-.card:hover{transform:translateY(-3px);box-shadow:var(--sh)}
-.card__ic{width:52px;height:52px;border-radius:16px;background:var(--pink-100);color:var(--pink-700);display:grid;place-items:center;margin-bottom:var(--s3)}
-.card h3{font-size:1.125rem}
-.card p{color:var(--muted);font-size:.9375rem;margin:0}
-.card--feature{grid-column:1/-1;display:grid;gap:var(--s4);background:var(--plum-900);border-color:var(--plum-900);color:#FBE7F1}
-.card--feature h3{color:#fff;font-size:1.375rem}
-.card--feature p{color:#F2CFE1}
-.card--feature .card__ic{background:rgba(255,255,255,.12);color:#FF8CC0}
-.review-list{list-style:none;padding:0;margin:0;display:grid;gap:var(--s3)}
-.review-list li{display:flex;gap:var(--s3);align-items:flex-start;padding:var(--s3) var(--s4);border-radius:var(--r);background:rgba(255,255,255,.07)}
-.review-list strong{display:block;color:#fff}
-.review-list li>svg{color:#FF8CC0;margin-top:.2rem}
-@media(min-width:900px){.card--feature{grid-template-columns:1fr 1.2fr;padding:var(--s6);align-items:center}}
-.partners{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:var(--s3);margin-top:var(--s6)}
-.partners p{width:100%;text-align:center;font-weight:700;color:var(--muted);font-size:.875rem;margin:0 0 var(--s2);letter-spacing:.04em;text-transform:uppercase}
-.partner{padding:.6rem 1.1rem;border-radius:var(--r-pill);background:#fff;border:1px solid var(--line);font-weight:700;color:var(--plum);font-size:.9375rem}
 
 /* ---------- Testimoni ---------- */
 .testi-wrap{position:relative}
@@ -460,7 +500,7 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
 }
 
 /* Toast */
-.toast{position:fixed;left:50%;bottom:88px;z-index:300;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--plum-900);color:#fff;padding:.75rem 1.1rem;border-radius:var(--r-pill);font-weight:600;font-size:.9375rem;box-shadow:var(--sh-lg);transition:opacity var(--t),transform var(--t);max-width:calc(100vw - 32px);text-align:center}
+.toast{position:fixed;left:50%;bottom:88px;z-index:300;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--plum-900);color:#fff;padding:.75rem 1.1rem;border-radius:16px;font-weight:600;font-size:.9375rem;box-shadow:var(--sh-lg);transition:opacity var(--t),transform var(--t);width:max-content;max-width:calc(100vw - 32px);text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* Reveal saat scroll (hanya bila JS aktif) */
@@ -513,11 +553,10 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
     </a>
     <nav class="nav" aria-label="Navigasi utama">
       <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#platform">Platform</a></li>
         <li><a href="#kalkulator">Cek Harga</a></li>
         <li><a href="#cara-jual">Cara Jual</a></li>
         <li><a href="#tutorial">Tutorial Insight</a></li>
+        <li><a href="#ajukan">Ajukan</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
@@ -527,9 +566,7 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
   <div class="mnav" id="mnav" hidden>
     <div class="wrap">
       <ul>
-        <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#platform">Platform yang Kami Beli</a></li>
-        <li><a href="#kalkulator">Cek Estimasi Harga</a></li>
+        <li><a href="#kalkulator">Cek Harga</a></li>
         <li><a href="#cara-jual">Cara Jual</a></li>
         <li><a href="#tutorial">Tutorial Cek Insight</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -546,15 +583,25 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
   <div class="wrap hero__grid">
     <div>
       <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-wallet"/></svg></span>Kami membeli akun digital kamu</span>
-      <h1 id="hero-title">Jual Akun Digitalmu, <span class="hl">Mudah, Aman &amp; Cepat Cair!</span></h1>
-      <p class="hero__lead">Punya akun <strong>Instagram, TikTok, YouTube, atau Saluran WhatsApp</strong> yang sudah jarang dipakai? Jual ke D Buy. Review gratis, harga transparan, dan dana cair <strong>maksimal 3 hari</strong> setelah transaksi selesai.</p>
+      <h1 id="hero-title">Jual Akun Digitalmu, <span class="hl">Cepat Cair &amp; Aman!</span></h1>
+      <p class="hero__lead">Instagram, TikTok, YouTube, atau Saluran WhatsApp yang jarang dipakai? Jual ke <strong>D Buy</strong>, dananya cair <strong>maksimal 3 hari</strong>.</p>
       <div class="hero__ctas">
         <a class="btn btn--primary" href="#ajukan">Jual Akun Sekarang<svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn--ghost" href="#kalkulator"><svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg>Cek Estimasi Harga</a>
+        <a class="btn btn--ghost" href="#kalkulator"><svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg>Cek Harga Akun</a>
       </div>
+      <ul class="perks">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Review gratis</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Bayar di akhir</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Resmi Universitas STEKOM</li>
+      </ul>
       <div class="notice">
         <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-        <p><strong>D Buy membeli akun dari kamu.</strong> Kami tidak menjual akun dan tidak punya katalog akun untuk dibeli.</p>
+        <p><strong>D Buy membeli akun dari kamu.</strong> Kami tidak menjual akun.</p>
+      </div>
+      <div class="kpis" aria-label="Pencapaian D Buy">
+        <div class="kpi"><b data-count="1011" data-suffix="+">1.011+</b><span>Akun terbeli</span></div>
+        <div class="kpi"><b data-count="711" data-suffix="+">711+</b><span>Penjual puas</span></div>
+        <div class="kpi"><b data-count="3" data-suffix=" hari">3 hari</b><span>Dana cair maks.</span></div>
       </div>
     </div>
 
@@ -564,70 +611,16 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
       <div class="float float--tt tile tile--tt"><svg><use href="#i-tt"/></svg></div>
       <div class="float float--yt tile tile--yt"><svg><use href="#i-yt"/></svg></div>
       <div class="float float--wa tile tile--wa"><svg><use href="#i-wa"/></svg></div>
-      <div class="phone">
+      <div class="phone" id="heroPhone">
         <img class="phone__logo" src="assets/logo-dbuy.webp" width="640" height="236" alt="">
         <p class="phone__label">Penawaran untuk akunmu</p>
-        <div class="phone__acc" id="heroAcc"><span class="tile tile--ig"><svg><use href="#i-ig"/></svg></span><span><span id="heroName">@akun.kamu</span><small id="heroMeta">Instagram · 12.000 followers</small></span></div>
-        <div class="phone__price" id="heroPrice">Rp1.200.000</div>
+        <div class="phone__acc swap"><span class="tile tile--ig" id="heroTile"><svg><use href="#i-ig"/></svg></span><span style="min-width:0"><b id="heroName">@akun.kamu</b><small id="heroMeta">Instagram · 12.000 followers</small></span></div>
+        <div class="phone__price swap" id="heroPrice">Rp1.200.000</div>
         <div class="phone__bar"><i id="heroBar"></i></div>
-        <ul class="phone__ins"><li><span>Jangkauan</span><b style="--w:82%"></b></li><li><span>Engagement</span><b style="--w:64%"></b></li><li><span>Audiens asli</span><b style="--w:91%"></b></li></ul>
+        <ul class="phone__ins"><li>Jangkauan<b><i data-ins="0" style="--w:82%"></i></b></li><li>Engagement<b><i data-ins="1" style="--w:64%"></i></b></li><li>Audiens asli<b><i data-ins="2" style="--w:91%"></i></b></li></ul>
         <div class="phone__status"><svg class="icon"><use href="#i-check"/></svg>Lolos review</div>
         <div class="phone__cta">Dana cair maks. 3 hari</div>
       </div>
-      <div class="hand-note">Akun nganggur?<br>Jadikan cuan!</div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST STRIP -->
-<div class="wrap trust">
-  <ul class="trust__list reveal">
-    <li class="trust__item"><span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#i-school"/></svg></span><div><h3>Resmi di Bawah STEKOM</h3><p>Program Duta Teladan by Universitas STEKOM.</p></div></li>
-    <li class="trust__item"><span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span><div><h3>Harga Transparan</h3><p>Tanpa biaya di awal, tanpa potongan tersembunyi.</p></div></li>
-    <li class="trust__item"><span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span><div><h3>Bayar di Akhir</h3><p>Dana cair maksimal 3 hari setelah verifikasi.</p></div></li>
-    <li class="trust__item"><span class="trust__ic"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><div><h3>Konsultasi Gratis</h3><p>Tanya dulu ke admin lewat WhatsApp.</p></div></li>
-  </ul>
-</div>
-
-<!-- PLATFORM -->
-<section class="sec" id="platform" aria-labelledby="platform-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-check"/></svg></span>Akun yang kami beli</span>
-      <h2 id="platform-title">Akun Apa yang Bisa Kamu Jual?</h2>
-      <p>Pilih platform akunmu untuk cek estimasi harga atau pelajari cara mengambil screenshot insight-nya.</p>
-    </div>
-    <div class="plats">
-      <article class="plat plat--ig reveal">
-        <div class="plat__top"><span class="tile tile--ig"><svg aria-hidden="true"><use href="#i-ig"/></svg></span><div><h3>Instagram</h3><p class="plat__sub">Akun pribadi, kreator, atau bisnis</p></div></div>
-        <span class="plat__min">Minimal 500 followers</span>
-        <ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Followers asli &amp; aktif</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Bebas pelanggaran</li></ul>
-        <div class="plat__acts"><a class="btn btn--primary btn--sm" href="#kalkulator" data-pick="ig">Cek Harga</a><a class="btn btn--ghost btn--sm" href="#tutorial" data-tut="ig">Tutorial Insight</a></div>
-      </article>
-      <article class="plat plat--tt reveal">
-        <div class="plat__top"><span class="tile tile--tt"><svg aria-hidden="true"><use href="#i-tt"/></svg></span><div><h3>TikTok</h3><p class="plat__sub">Akun dengan penonton aktif</p></div></div>
-        <span class="plat__min">Minimal 500 followers</span>
-        <ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Views &amp; interaksi nyata</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Bebas pelanggaran</li></ul>
-        <div class="plat__acts"><a class="btn btn--primary btn--sm" href="#kalkulator" data-pick="tt">Cek Harga</a><a class="btn btn--ghost btn--sm" href="#tutorial" data-tut="tt">Tutorial Insight</a></div>
-      </article>
-      <article class="plat plat--yt reveal">
-        <div class="plat__top"><span class="tile tile--yt"><svg aria-hidden="true"><use href="#i-yt"/></svg></span><div><h3>YouTube</h3><p class="plat__sub">Channel aktif dengan subscriber</p></div></div>
-        <span class="plat__min">Harga lewat review admin</span>
-        <ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Penayangan &amp; waktu tonton</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Status monetisasi aman</li></ul>
-        <div class="plat__acts"><a class="btn btn--primary btn--sm" href="#kalkulator" data-pick="yt">Minta Penawaran</a><a class="btn btn--ghost btn--sm" href="#tutorial" data-tut="yt">Tutorial Insight</a></div>
-      </article>
-      <article class="plat plat--wa reveal">
-        <div class="plat__top"><span class="tile tile--wa"><svg aria-hidden="true"><use href="#i-wa"/></svg></span><div><h3>Saluran WhatsApp</h3><p class="plat__sub">Channel dengan pengikut aktif</p></div></div>
-        <span class="plat__min">Harga lewat review admin</span>
-        <ul><li><svg aria-hidden="true"><use href="#i-check"/></svg>Jangkauan &amp; pertumbuhan</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Wilayah audiens jelas</li></ul>
-        <div class="plat__acts"><a class="btn btn--primary btn--sm" href="#kalkulator" data-pick="wa">Minta Penawaran</a><a class="btn btn--ghost btn--sm" href="#tutorial" data-tut="wa">Tutorial Insight</a></div>
-      </article>
-    </div>
-
-    <div class="stats reveal" aria-label="Pencapaian D Buy">
-      <div class="stat"><div class="stat__num" data-count="1011" data-suffix="+">1.011+</div><div class="stat__lbl">Akun Terbeli</div></div>
-      <div class="stat"><div class="stat__num" data-count="711" data-suffix="+">711+</div><div class="stat__lbl">Penjual Puas</div></div>
-      <div class="stat"><div class="stat__num" data-count="3" data-suffix=" Hari">3 Hari</div><div class="stat__lbl">Pencairan Maks.</div></div>
     </div>
   </div>
 </section>
@@ -681,20 +674,16 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
 <!-- CARA JUAL -->
 <section class="sec" id="cara-jual" aria-labelledby="flow-title">
   <div class="wrap">
-    <div class="sec-head sec-head--center reveal">
-      <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-flag"/></svg></span>Alur transaksi</span>
-      <h2 id="flow-title">6 Langkah Jual Akun ke D Buy</h2>
-      <p>Jelas dari awal pengajuan sampai dana masuk ke rekeningmu.</p>
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-flag"/></svg></span>Alur jual</span>
+      <h2 id="flow-title">4 Langkah, Dana Cair</h2>
     </div>
     <ol class="flow">
-      <li class="reveal"><span class="flow__n" aria-hidden="true">1</span><h3>Ajukan Akunmu</h3><p>Isi form pengajuan di halaman ini atau chat admin di WhatsApp: platform, username, dan jumlah followers.</p></li>
-      <li class="reveal"><span class="flow__n" aria-hidden="true">2</span><h3>Kirim Screenshot Insight</h3><p>Ikuti <a href="#tutorial">tutorial cek insight</a> lalu kirim screenshot-nya ke admin.</p></li>
-      <li class="reveal"><span class="flow__n" aria-hidden="true">3</span><h3>Review Akun</h3><p>Tim mengecek:</p><ul><li>Kualitas &amp; keaslian audiens</li><li>Insight &amp; demografi pengikut</li><li>Riwayat pelanggaran &amp; monetisasi</li></ul></li>
-      <li class="reveal"><span class="flow__n" aria-hidden="true">4</span><h3>Penawaran &amp; Negosiasi</h3><p>Jika lolos review, kamu menerima penawaran harga. Negosiasi sampai sepakat.</p></li>
-      <li class="reveal"><span class="flow__n" aria-hidden="true">5</span><h3>Serah Terima Akun</h3><p>Setelah harga disepakati, data akun diserahkan lengkap ke admin untuk pemindahan kepemilikan.</p></li>
-      <li class="reveal"><span class="flow__n" aria-hidden="true">6</span><h3>Dana Cair</h3><p>Pembayaran ditransfer ke rekeningmu setelah transaksi dinyatakan berhasil.</p></li>
+      <li class="reveal"><span class="flow__n" aria-hidden="true">1</span><div><h3>Ajukan akun</h3><p>Isi <a href="#ajukan">form singkat</a>, otomatis terkirim ke WhatsApp admin.</p></div></li>
+      <li class="reveal"><span class="flow__n" aria-hidden="true">2</span><div><h3>Kirim insight</h3><p>Screenshot insight akun. Caranya ada di <a href="#tutorial">tutorial</a>.</p></div></li>
+      <li class="reveal"><span class="flow__n" aria-hidden="true">3</span><div><h3>Review &amp; penawaran</h3><p>Kami cek keaslian audiens, lalu kirim penawaran harga.</p></div></li>
+      <li class="reveal"><span class="flow__n" aria-hidden="true">4</span><div><h3>Serah terima &amp; cair</h3><p>Setelah sepakat, akun dipindahkan dan dana cair maks. 3 hari.</p></div></li>
     </ol>
-    <p class="flow-note reveal"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Verifikasi keamanan akun &amp; pencairan dana maksimal 3 hari.</p>
   </div>
 </section>
 
@@ -702,252 +691,75 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
 <section class="sec sec--tint" id="tutorial" aria-labelledby="tut-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-camera"/></svg></span>Panduan lengkap</span>
+      <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-camera"/></svg></span>Simulasi langkah demi langkah</span>
       <h2 id="tut-title">Tutorial Cek Insight Akun</h2>
-      <p>Admin butuh screenshot insight untuk menilai harga akunmu. Pilih platform, ikuti langkahnya, lalu centang tiap langkah yang sudah selesai.</p>
+      <p>Pilih platform dan data yang mau dicek, lalu ikuti simulasi di layar HP. Tekan <strong>Lanjut</strong> atau geser layar HP-nya.</p>
     </div>
-    <div class="tabs" role="tablist" aria-label="Pilih platform tutorial" hidden>
-      <button class="tab" type="button" role="tab" id="tab-ig" data-key="ig" aria-controls="tp-ig" aria-selected="false" tabindex="-1"><span class="tile tile--ig"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>Instagram<span class="tab__count">3 panduan</span></button>
-      <button class="tab" type="button" role="tab" id="tab-tt" data-key="tt" aria-controls="tp-tt" aria-selected="false" tabindex="-1"><span class="tile tile--tt"><svg aria-hidden="true"><use href="#i-tt"/></svg></span>TikTok<span class="tab__count">3 panduan</span></button>
-      <button class="tab" type="button" role="tab" id="tab-yt" data-key="yt" aria-controls="tp-yt" aria-selected="false" tabindex="-1"><span class="tile tile--yt"><svg aria-hidden="true"><use href="#i-yt"/></svg></span>YouTube<span class="tab__count">2 panduan</span></button>
-      <button class="tab" type="button" role="tab" id="tab-wa" data-key="wa" aria-controls="tp-wa" aria-selected="false" tabindex="-1"><span class="tile tile--wa"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>Saluran WhatsApp<span class="tab__count">5 panduan</span></button>
-    </div>
-    <div class="tpanel" id="tp-ig" data-key="ig" role="tabpanel" aria-labelledby="tab-ig">
-      <ul class="topics" aria-label="Topik insight Instagram" hidden>
-        <li><button class="topic" type="button" data-guide="g-ig-insight-akun" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Insight akun<span class="topic__badge">7 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-ig-lokasi-audiens" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Lokasi audiens (kota)<span class="topic__badge">7 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-ig-insight-postingan" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Insight per postingan<span class="topic__badge">5 langkah</span></button></li>
-      </ul>
-      <div class="guides">
-      <article class="guide" id="g-ig-insight-akun" aria-labelledby="g-ig-insight-akun-t">
-        <div class="guide__head"><span class="guide__badge">7 LANGKAH MUDAH</span><h3 id="g-ig-insight-akun-t">Langkah-langkah Mencari Insight Akun Instagram</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/7 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-1"><label for="g-ig-insight-akun-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka profil Instagram kamu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-2"><label for="g-ig-insight-akun-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Klik &quot;Dasbor Profesional&quot; atau &quot;Dasbor Anda&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-3"><label for="g-ig-insight-akun-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Pilih menu &quot;Insight&quot; atau &quot;Lihat Insight&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-4"><label for="g-ig-insight-akun-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih bagian &quot;Tayangan&quot; untuk melihat data performa akun.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-5"><label for="g-ig-insight-akun-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Scroll ke bagian &quot;Audiens&quot; untuk melihat informasi mengenai audiens akun.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-6"><label for="g-ig-insight-akun-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Screenshot halaman insight yang menampilkan data tersebut.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-akun-7"><label for="g-ig-insight-akun-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Kirimkan screenshot insight akun kepada kami untuk membantu proses pengecekan harga akun.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/ig-insight-akun.webp" data-title="Langkah-langkah Mencari Insight Akun Instagram" data-alt="Infografis: Langkah-langkah Mencari Insight Akun Instagram, 7 langkah bergambar"><img src="assets/tutorial/ig-insight-akun.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Langkah-langkah Mencari Insight Akun Instagram, 7 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Instagram%20saya%20%28Insight%20akun%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Instagram saya (Insight akun)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-ig-lokasi-audiens" aria-labelledby="g-ig-lokasi-audiens-t">
-        <div class="guide__head"><span class="guide__badge">7 LANGKAH MUDAH</span><h3 id="g-ig-lokasi-audiens-t">Langkah-langkah Mencari Data Lokasi Audiens Instagram</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/7 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-1"><label for="g-ig-lokasi-audiens-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka Instagram, lalu masuk ke Profil.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-2"><label for="g-ig-lokasi-audiens-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Klik garis tiga ≡ di pojok kanan atas.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-3"><label for="g-ig-lokasi-audiens-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Pilih menu &quot;Dasbor Anda&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-4"><label for="g-ig-lokasi-audiens-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Klik pilihan &quot;Tayangan&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-5"><label for="g-ig-lokasi-audiens-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Pilih &quot;Audiens&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-6"><label for="g-ig-lokasi-audiens-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Scroll ke bawah sampai menemukan &quot;Lokasi Populer&quot;, lalu pilih &quot;Kota&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-lokasi-audiens-7"><label for="g-ig-lokasi-audiens-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Screenshot bagian tersebut, kemudian kirimkan ke admin</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/ig-lokasi-audiens.webp" data-title="Langkah-langkah Mencari Data Lokasi Audiens Instagram" data-alt="Infografis: Langkah-langkah Mencari Data Lokasi Audiens Instagram, 7 langkah bergambar"><img src="assets/tutorial/ig-lokasi-audiens.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Langkah-langkah Mencari Data Lokasi Audiens Instagram, 7 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Instagram%20saya%20%28Lokasi%20audiens%20%28kota%29%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Instagram saya (Lokasi audiens (kota))." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-ig-insight-postingan" aria-labelledby="g-ig-insight-postingan-t">
-        <div class="guide__head"><span class="guide__badge">5 LANGKAH MUDAH</span><h3 id="g-ig-insight-postingan-t">Langkah-langkah Melihat Insight per Postingan Instagram</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/5 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-ig-insight-postingan-1"><label for="g-ig-insight-postingan-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka profil akun Instagram kamu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-postingan-2"><label for="g-ig-insight-postingan-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Pilih salah satu postingan yang ingin dilihat insight-nya.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-postingan-3"><label for="g-ig-insight-postingan-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik ikon dua garis/titik di pojok kanan atas pada postingan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-postingan-4"><label for="g-ig-insight-postingan-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih &quot;Lihat Insight&quot;.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-ig-insight-postingan-5"><label for="g-ig-insight-postingan-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Setelah halaman insight terbuka, screenshot bagian insight tersebut dan kirimkan kepada kami.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/ig-insight-postingan.webp" data-title="Langkah-langkah Melihat Insight per Postingan Instagram" data-alt="Infografis: Langkah-langkah Melihat Insight per Postingan Instagram, 5 langkah bergambar"><img src="assets/tutorial/ig-insight-postingan.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Langkah-langkah Melihat Insight per Postingan Instagram, 5 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Instagram%20saya%20%28Insight%20per%20postingan%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Instagram saya (Insight per postingan)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
+    <div class="tut-app" id="tutApp" hidden>
+      <div class="pick">
+        <p class="pick__lbl" id="pl1">1 · Pilih platform</p>
+        <div class="tabs" role="group" aria-labelledby="pl1">
+          <button class="tab" type="button" data-p="ig" aria-pressed="false"><span class="tile tile--ig"><svg aria-hidden="true"><use href="#i-ig"/></svg></span>Instagram</button>
+          <button class="tab" type="button" data-p="tt" aria-pressed="false"><span class="tile tile--tt"><svg aria-hidden="true"><use href="#i-tt"/></svg></span>TikTok</button>
+          <button class="tab" type="button" data-p="yt" aria-pressed="false"><span class="tile tile--yt"><svg aria-hidden="true"><use href="#i-yt"/></svg></span>YouTube</button>
+          <button class="tab" type="button" data-p="wa" aria-pressed="false"><span class="tile tile--wa"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>Saluran WhatsApp</button>
+        </div>
+        <p class="pick__lbl" id="pl2">2 · Pilih data yang mau dicek</p>
+        <div class="topics" id="topics" role="group" aria-labelledby="pl2"></div>
+      </div>
+      <div class="player" id="player">
+        <div class="sim-wrap">
+          <div class="sim" id="sim" aria-hidden="true" title="Ketuk untuk lanjut, geser untuk pindah langkah">
+            <div class="sim__status"><span>9:41</span><span>●●● 100%</span></div>
+            <div class="sim__bar"><svg class="back"><use href="#i-chev-l"/></svg><span class="tile tile--ig" id="simTile"></span><b id="simTitle">Instagram</b></div>
+            <div class="sim__screen" id="simScreen"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel__badge" id="tBadge"></span>
+          <h3 id="tTitle"></h3>
+          <div class="meter"><span class="meter__bar" aria-hidden="true"><i id="tMeter"></i></span><span id="tMeterTxt"></span></div>
+          <div class="stepcard" aria-live="polite">
+            <span class="stepcard__n" id="tN" aria-hidden="true">1</span>
+            <div><p class="stepcard__t" id="tT"></p><span class="stepcard__k" id="tK"></span></div>
+          </div>
+          <div class="ctrl">
+            <button class="btn btn--ghost btn--sm" type="button" id="tPrev"><svg class="icon" aria-hidden="true"><use href="#i-chev-l"/></svg><span class="sr-only">Langkah sebelumnya</span><span aria-hidden="true">Kembali</span></button>
+            <div class="dots" id="tDots" aria-label="Pilih langkah"></div>
+            <button class="btn btn--primary btn--sm" type="button" id="tNext"><span id="tNextTxt">Lanjut</span><svg class="icon" aria-hidden="true"><use href="#i-chev-r"/></svg></button>
+          </div>
+          <div class="finish" role="status">
+            <h4 id="tFinishTitle" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Semua langkah selesai!</h4>
+            <p>Kirim screenshot-nya ke admin supaya akunmu bisa langsung dinilai.</p>
+            <div class="row-btn">
+              <a class="btn btn--primary btn--sm" id="tSend" href="https://wa.me/628888999904" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a>
+              <button class="btn btn--ghost btn--sm" type="button" id="tAgain">Ulangi tutorial</button>
+            </div>
+          </div>
+          <div class="panel__tools">
+            <button class="chip" type="button" id="tPlay" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> <span id="tPlayTxt">Putar otomatis</span></button>
+            <button class="chip" type="button" id="tImg"><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg> Lihat infografis asli</button>
+          </div>
+          <p class="kbd-hint">Tips: ketuk atau geser layar HP, atau pakai tombol panah ← → di keyboard.</p>
+        </div>
       </div>
     </div>
-    <div class="tpanel" id="tp-tt" data-key="tt" role="tabpanel" aria-labelledby="tab-tt">
-      <ul class="topics" aria-label="Topik insight TikTok" hidden>
-        <li><button class="topic" type="button" data-guide="g-tiktok-insight-akun" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Insight akun (Ikhtisar)<span class="topic__badge">9 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-tiktok-view-postingan" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>View per postingan<span class="topic__badge">6 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-tiktok-lokasi-audiens" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Lokasi audiens (kota)<span class="topic__badge">12 langkah</span></button></li>
-      </ul>
-      <div class="guides">
-      <article class="guide" id="g-tiktok-insight-akun" aria-labelledby="g-tiktok-insight-akun-t">
-        <div class="guide__head"><span class="guide__badge">9 LANGKAH MUDAH</span><h3 id="g-tiktok-insight-akun-t">Cara Mengecek Insight Akun TikTok</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/9 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-1"><label for="g-tiktok-insight-akun-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi TikTok dan masuk ke akun kamu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-2"><label for="g-tiktok-insight-akun-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Klik Profil di pojok kanan bawah.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-3"><label for="g-tiktok-insight-akun-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik ikon ≡ di pojok kanan atas.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-4"><label for="g-tiktok-insight-akun-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih menu TikTok Studio.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-5"><label for="g-tiktok-insight-akun-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Pilih Analisis.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-6"><label for="g-tiktok-insight-akun-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Klik tab Ikhtisar.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-7"><label for="g-tiktok-insight-akun-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Pilih periode 7 hari.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-8"><label for="g-tiktok-insight-akun-8"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 8: </span>Screenshot halaman Insight yang menampilkan tayangan postingan, tampilan profil, suka, komentar, dan bagikan, seperti contoh gambar.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-insight-akun-9"><label for="g-tiktok-insight-akun-9"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 9: </span>Kirimkan screenshot tersebut sesuai instruksi yang diberikan.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/tiktok-insight-akun.webp" data-title="Cara Mengecek Insight Akun TikTok" data-alt="Infografis: Cara Mengecek Insight Akun TikTok, 9 langkah bergambar"><img src="assets/tutorial/tiktok-insight-akun.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Insight Akun TikTok, 9 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20TikTok%20saya%20%28Insight%20akun%20%28Ikhtisar%29%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun TikTok saya (Insight akun (Ikhtisar))." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-tiktok-view-postingan" aria-labelledby="g-tiktok-view-postingan-t">
-        <div class="guide__head"><span class="guide__badge">6 LANGKAH MUDAH</span><h3 id="g-tiktok-view-postingan-t">Cara Mengecek Insight View per Postingan TikTok</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/6 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-tiktok-view-postingan-1"><label for="g-tiktok-view-postingan-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi TikTok dan masuk ke menu Profil.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-view-postingan-2"><label for="g-tiktok-view-postingan-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Pilih salah satu video yang ingin kamu periksa.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-view-postingan-3"><label for="g-tiktok-view-postingan-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik Lihat analisis atau Analisis pada video tersebut.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-view-postingan-4"><label for="g-tiktok-view-postingan-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Perhatikan jumlah tayangan video (views) dan data Insight lainnya, seperti total waktu putar, rata-rata waktu menonton, persentase penonton yang menonton sampai selesai, dan pengikut baru.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-view-postingan-5"><label for="g-tiktok-view-postingan-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Pastikan data analisis video sudah terlihat dengan jelas.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-view-postingan-6"><label for="g-tiktok-view-postingan-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Screenshot halaman Analisis Video tersebut sebagai bukti Insight per postingan.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/tiktok-view-postingan.webp" data-title="Cara Mengecek Insight View per Postingan TikTok" data-alt="Infografis: Cara Mengecek Insight View per Postingan TikTok, 6 langkah bergambar"><img src="assets/tutorial/tiktok-view-postingan.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Insight View per Postingan TikTok, 6 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20TikTok%20saya%20%28View%20per%20postingan%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun TikTok saya (View per postingan)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-tiktok-lokasi-audiens" aria-labelledby="g-tiktok-lokasi-audiens-t">
-        <div class="guide__head"><span class="guide__badge">12 LANGKAH MUDAH</span><h3 id="g-tiktok-lokasi-audiens-t">Cara Mengecek Data Audiens TikTok Berdasarkan Kota atau Daerah</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/12 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-1"><label for="g-tiktok-lokasi-audiens-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi TikTok dan masuk ke akun kamu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-2"><label for="g-tiktok-lokasi-audiens-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Klik Profil di pojok kanan bawah.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-3"><label for="g-tiktok-lokasi-audiens-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik ikon ≡ di pojok kanan atas.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-4"><label for="g-tiktok-lokasi-audiens-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih menu TikTok Studio.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-5"><label for="g-tiktok-lokasi-audiens-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Pilih Analisis.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-6"><label for="g-tiktok-lokasi-audiens-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Klik tab Penonton.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-7"><label for="g-tiktok-lokasi-audiens-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Cari bagian Wawasan penonton.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-8"><label for="g-tiktok-lokasi-audiens-8"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 8: </span>Pilih menu Lokasi.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-9"><label for="g-tiktok-lokasi-audiens-9"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 9: </span>Perhatikan daftar negara beserta persentase audiensnya.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-10"><label for="g-tiktok-lokasi-audiens-10"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 10: </span>Klik Indonesia untuk melihat rincian kota atau daerah asal audiens.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-11"><label for="g-tiktok-lokasi-audiens-11"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 11: </span>Periksa daftar kota beserta persentasenya, lalu tentukan kota dengan persentase tertinggi sebagai lokasi audiens terbanyak.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-tiktok-lokasi-audiens-12"><label for="g-tiktok-lokasi-audiens-12"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 12: </span>Screenshot halaman tersebut sebagai bukti data audiens akun TikTok kamu.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/tiktok-lokasi-audiens.webp" data-title="Cara Mengecek Data Audiens TikTok Berdasarkan Kota atau Daerah" data-alt="Infografis: Cara Mengecek Data Audiens TikTok Berdasarkan Kota atau Daerah, 12 langkah bergambar"><img src="assets/tutorial/tiktok-lokasi-audiens.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Data Audiens TikTok Berdasarkan Kota atau Daerah, 12 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20TikTok%20saya%20%28Lokasi%20audiens%20%28kota%29%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun TikTok saya (Lokasi audiens (kota))." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      </div>
+    <div class="tut-static">
+      <details><summary>Instagram: Langkah-langkah Mencari Insight Akun Instagram</summary><ol><li>Buka profil Instagram kamu.</li><li>Klik &quot;Dasbor Profesional&quot; atau &quot;Dasbor Anda&quot;.</li><li>Pilih menu &quot;Insight&quot; atau &quot;Lihat Insight&quot;.</li><li>Pilih bagian &quot;Tayangan&quot; untuk melihat data performa akun.</li><li>Scroll ke bagian &quot;Audiens&quot; untuk melihat informasi mengenai audiens akun.</li><li>Screenshot halaman insight yang menampilkan data tersebut.</li><li>Kirimkan screenshot insight akun kepada kami untuk membantu proses pengecekan harga akun.</li></ol><a href="assets/tutorial/ig-insight-akun.webp">Lihat infografis</a></details>
+      <details><summary>Instagram: Langkah-langkah Mencari Data Lokasi Audiens Instagram</summary><ol><li>Buka Instagram, lalu masuk ke Profil.</li><li>Klik garis tiga ≡ di pojok kanan atas.</li><li>Pilih menu &quot;Dasbor Anda&quot;.</li><li>Klik pilihan &quot;Tayangan&quot;.</li><li>Pilih &quot;Audiens&quot;.</li><li>Scroll ke bawah sampai menemukan &quot;Lokasi Populer&quot;, lalu pilih &quot;Kota&quot;.</li><li>Screenshot bagian tersebut, kemudian kirimkan ke admin</li></ol><a href="assets/tutorial/ig-lokasi-audiens.webp">Lihat infografis</a></details>
+      <details><summary>Instagram: Langkah-langkah Melihat Insight per Postingan Instagram</summary><ol><li>Buka profil akun Instagram kamu.</li><li>Pilih salah satu postingan yang ingin dilihat insight-nya.</li><li>Klik ikon dua garis/titik di pojok kanan atas pada postingan.</li><li>Pilih &quot;Lihat Insight&quot;.</li><li>Setelah halaman insight terbuka, screenshot bagian insight tersebut dan kirimkan kepada kami.</li></ol><a href="assets/tutorial/ig-insight-postingan.webp">Lihat infografis</a></details>
+      <details><summary>TikTok: Cara Mengecek Insight Akun TikTok</summary><ol><li>Buka aplikasi TikTok dan masuk ke akun kamu.</li><li>Klik Profil di pojok kanan bawah.</li><li>Klik ikon ≡ di pojok kanan atas.</li><li>Pilih menu TikTok Studio.</li><li>Pilih Analisis.</li><li>Klik tab Ikhtisar.</li><li>Pilih periode 7 hari.</li><li>Screenshot halaman Insight yang menampilkan tayangan postingan, tampilan profil, suka, komentar, dan bagikan, seperti contoh gambar.</li><li>Kirimkan screenshot tersebut sesuai instruksi yang diberikan.</li></ol><a href="assets/tutorial/tiktok-insight-akun.webp">Lihat infografis</a></details>
+      <details><summary>TikTok: Cara Mengecek Insight View per Postingan TikTok</summary><ol><li>Buka aplikasi TikTok dan masuk ke menu Profil.</li><li>Pilih salah satu video yang ingin kamu periksa.</li><li>Klik Lihat analisis atau Analisis pada video tersebut.</li><li>Perhatikan jumlah tayangan video (views) dan data Insight lainnya, seperti total waktu putar, rata-rata waktu menonton, persentase penonton yang menonton sampai selesai, dan pengikut baru.</li><li>Pastikan data analisis video sudah terlihat dengan jelas.</li><li>Screenshot halaman Analisis Video tersebut sebagai bukti Insight per postingan.</li></ol><a href="assets/tutorial/tiktok-view-postingan.webp">Lihat infografis</a></details>
+      <details><summary>TikTok: Cara Mengecek Data Audiens TikTok Berdasarkan Kota atau Daerah</summary><ol><li>Buka aplikasi TikTok dan masuk ke akun kamu.</li><li>Klik Profil di pojok kanan bawah.</li><li>Klik ikon ≡ di pojok kanan atas.</li><li>Pilih menu TikTok Studio.</li><li>Pilih Analisis.</li><li>Klik tab Penonton.</li><li>Cari bagian Wawasan penonton.</li><li>Pilih menu Lokasi.</li><li>Perhatikan daftar negara beserta persentase audiensnya.</li><li>Klik Indonesia untuk melihat rincian kota atau daerah asal audiens.</li><li>Periksa daftar kota beserta persentasenya, lalu tentukan kota dengan persentase tertinggi sebagai lokasi audiens terbanyak.</li><li>Screenshot halaman tersebut sebagai bukti data audiens akun TikTok kamu.</li></ol><a href="assets/tutorial/tiktok-lokasi-audiens.webp">Lihat infografis</a></details>
+      <details><summary>YouTube: Cara Mengecek Insight Akun YouTube</summary><ol><li>Buka aplikasi YouTube Studio dan login ke akun YouTube kamu.</li><li>Pada halaman Dasbor, lihat bagian analisis channel.</li><li>Perhatikan jumlah subscriber, penayangan, dan waktu tonton yang ditampilkan.</li><li>Pilih video pada bagian Konten terbaru yang dipublikasikan untuk melihat performa video tertentu.</li><li>Perhatikan data Insight, seperti jumlah penayangan (views), persentase penayangan rata-rata, suka, dan komentar.</li><li>Untuk melihat analisis lebih lengkap, klik menu Analytics di bagian bawah layar.</li><li>Pilih periode waktu yang ingin diperiksa, misalnya 28 hari terakhir.</li><li>Screenshot halaman Insight yang menampilkan data akun YouTube kamu sebagai bukti.</li></ol><a href="assets/tutorial/yt-insight-channel.webp">Lihat infografis</a></details>
+      <details><summary>YouTube: Cara Mengecek Insight Penayangan YouTube</summary><ol><li>Buka aplikasi YouTube Studio dan login ke akun kamu.</li><li>Klik menu Analytics di bagian bawah layar.</li><li>Pilih tab Ringkasan.</li><li>Perhatikan jumlah Penayangan dan Waktu tonton yang ditampilkan.</li><li>Periksa grafik untuk melihat perkembangan penayangan video selama periode tertentu.</li><li>Gulir ke bawah untuk melihat bagian Konten populer beserta jumlah penayangannya.</li><li>Pastikan data Insight terlihat jelas, lalu screenshot halaman tersebut sebagai bukti.</li></ol><a href="assets/tutorial/yt-penayangan.webp">Lihat infografis</a></details>
+      <details><summary>Saluran WhatsApp: Cara Mengecek Insight Saluran WhatsApp</summary><ol><li>Buka aplikasi WhatsApp.</li><li>Masuk ke menu Pembaruan.</li><li>Pilih saluran WhatsApp yang kamu kelola.</li><li>Klik nama saluran untuk melihat informasi saluran.</li><li>Cari menu Insight atau Statistik jika tersedia.</li><li>Periksa data jangkauan, jumlah pengikut, dan wilayah audiens.</li><li>Untuk melihat kota atau daerah dengan audiens terbanyak, periksa bagian Wilayah teratas.</li><li>Screenshot halaman Insight sebagai bukti data saluran.</li></ol><a href="assets/tutorial/wa-insight-saluran.webp">Lihat infografis</a></details>
+      <details><summary>Saluran WhatsApp: Langkah-langkah Cek Insight Jangkauan Saluran WhatsApp</summary><ol><li>Buka WhatsApp, lalu pilih menu Pembaruan.</li><li>Buka saluran yang kamu kelola.</li><li>Klik nama saluran, lalu pilih Insight.</li><li>Pilih tab Jangkauan.</li><li>Atur periode menjadi 30 hari terakhir.</li><li>Screenshot tampilan insight yang menunjukkan akun dijangkau dan wilayah teratas.</li></ol><a href="assets/tutorial/wa-jangkauan.webp">Lihat infografis</a></details>
+      <details><summary>Saluran WhatsApp: Langkah-langkah Cek Insight Perkembangan Saluran WhatsApp</summary><ol><li>Buka WhatsApp, lalu pilih menu Pembaruan.</li><li>Buka saluran yang kamu kelola.</li><li>Klik nama saluran, lalu pilih Insight.</li><li>Pilih tab Perkembangan.</li><li>Atur periode menjadi 30 hari terakhir.</li><li>Screenshot tampilan insight yang menunjukkan data perkembangan pengikut.</li></ol><a href="assets/tutorial/wa-perkembangan.webp">Lihat infografis</a></details>
+      <details><summary>Saluran WhatsApp: Cara Mengecek Insight Perkembangan Pengikut Saluran WhatsApp</summary><ol><li>Buka WhatsApp, lalu masuk ke menu Pembaruan.</li><li>Pilih saluran WhatsApp yang kamu kelola.</li><li>Klik nama saluran, lalu pilih Insight.</li><li>Pilih tab Perkembangan.</li><li>Atur periode waktu, misalnya 30 hari terakhir.</li><li>Periksa jumlah pengikut bersih, pengikut baru, dan pengikut yang berhenti mengikuti.</li><li>Screenshot halaman tersebut sebagai bukti Insight.</li></ol><a href="assets/tutorial/wa-perkembangan-pengikut.webp">Lihat infografis</a></details>
+      <details><summary>Saluran WhatsApp: Langkah-langkah Cek Insight Pengikut Saluran WhatsApp</summary><ol><li>Buka aplikasi WhatsApp.</li><li>Pilih menu Pembaruan, lalu buka saluran WhatsApp yang kamu kelola.</li><li>Klik nama saluran untuk membuka informasi saluran.</li><li>Cari dan pilih menu Insight.</li><li>Pilih tab Pengikut untuk melihat data pengikut saluran.</li><li>Screenshot halaman insight yang menampilkan total pengikut, persentase pertumbuhan pengikut selama 30 hari terakhir, dan wilayah teratas.</li><li>Kirim screenshot tersebut sebagai bukti insight saluran WhatsApp.</li></ol><a href="assets/tutorial/wa-pengikut.webp">Lihat infografis</a></details>
     </div>
-    <div class="tpanel" id="tp-yt" data-key="yt" role="tabpanel" aria-labelledby="tab-yt">
-      <ul class="topics" aria-label="Topik insight YouTube" hidden>
-        <li><button class="topic" type="button" data-guide="g-yt-insight-channel" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Insight akun (channel)<span class="topic__badge">8 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-yt-penayangan" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Penayangan &amp; waktu tonton<span class="topic__badge">7 langkah</span></button></li>
-      </ul>
-      <div class="guides">
-      <article class="guide" id="g-yt-insight-channel" aria-labelledby="g-yt-insight-channel-t">
-        <div class="guide__head"><span class="guide__badge">8 LANGKAH MUDAH</span><h3 id="g-yt-insight-channel-t">Cara Mengecek Insight Akun YouTube</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/8 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-1"><label for="g-yt-insight-channel-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi YouTube Studio dan login ke akun YouTube kamu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-2"><label for="g-yt-insight-channel-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Pada halaman Dasbor, lihat bagian analisis channel.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-3"><label for="g-yt-insight-channel-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Perhatikan jumlah subscriber, penayangan, dan waktu tonton yang ditampilkan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-4"><label for="g-yt-insight-channel-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih video pada bagian Konten terbaru yang dipublikasikan untuk melihat performa video tertentu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-5"><label for="g-yt-insight-channel-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Perhatikan data Insight, seperti jumlah penayangan (views), persentase penayangan rata-rata, suka, dan komentar.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-6"><label for="g-yt-insight-channel-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Untuk melihat analisis lebih lengkap, klik menu Analytics di bagian bawah layar.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-7"><label for="g-yt-insight-channel-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Pilih periode waktu yang ingin diperiksa, misalnya 28 hari terakhir.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-insight-channel-8"><label for="g-yt-insight-channel-8"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 8: </span>Screenshot halaman Insight yang menampilkan data akun YouTube kamu sebagai bukti.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/yt-insight-channel.webp" data-title="Cara Mengecek Insight Akun YouTube" data-alt="Infografis: Cara Mengecek Insight Akun YouTube, 8 langkah bergambar"><img src="assets/tutorial/yt-insight-channel.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Insight Akun YouTube, 8 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20YouTube%20saya%20%28Insight%20akun%20%28channel%29%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun YouTube saya (Insight akun (channel))." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-yt-penayangan" aria-labelledby="g-yt-penayangan-t">
-        <div class="guide__head"><span class="guide__badge">7 LANGKAH MUDAH</span><h3 id="g-yt-penayangan-t">Cara Mengecek Insight Penayangan YouTube</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/7 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-1"><label for="g-yt-penayangan-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi YouTube Studio dan login ke akun kamu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-2"><label for="g-yt-penayangan-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Klik menu Analytics di bagian bawah layar.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-3"><label for="g-yt-penayangan-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Pilih tab Ringkasan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-4"><label for="g-yt-penayangan-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Perhatikan jumlah Penayangan dan Waktu tonton yang ditampilkan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-5"><label for="g-yt-penayangan-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Periksa grafik untuk melihat perkembangan penayangan video selama periode tertentu.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-6"><label for="g-yt-penayangan-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Gulir ke bawah untuk melihat bagian Konten populer beserta jumlah penayangannya.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-yt-penayangan-7"><label for="g-yt-penayangan-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Pastikan data Insight terlihat jelas, lalu screenshot halaman tersebut sebagai bukti.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/yt-penayangan.webp" data-title="Cara Mengecek Insight Penayangan YouTube" data-alt="Infografis: Cara Mengecek Insight Penayangan YouTube, 7 langkah bergambar"><img src="assets/tutorial/yt-penayangan.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Insight Penayangan YouTube, 7 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20YouTube%20saya%20%28Penayangan%20%26%20waktu%20tonton%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun YouTube saya (Penayangan &amp; waktu tonton)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      </div>
-    </div>
-    <div class="tpanel" id="tp-wa" data-key="wa" role="tabpanel" aria-labelledby="tab-wa">
-      <ul class="topics" aria-label="Topik insight Saluran WhatsApp" hidden>
-        <li><button class="topic" type="button" data-guide="g-wa-insight-saluran" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Insight saluran<span class="topic__badge">8 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-wa-jangkauan" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Jangkauan saluran<span class="topic__badge">6 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-wa-perkembangan" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Perkembangan saluran<span class="topic__badge">6 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-wa-perkembangan-pengikut" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Perkembangan pengikut saluran<span class="topic__badge">7 langkah</span></button></li>
-        <li><button class="topic" type="button" data-guide="g-wa-pengikut" aria-pressed="false"><svg class="icon topic__done" aria-hidden="true"><use href="#i-check"/></svg>Pengikut saluran<span class="topic__badge">7 langkah</span></button></li>
-      </ul>
-      <div class="guides">
-      <article class="guide" id="g-wa-insight-saluran" aria-labelledby="g-wa-insight-saluran-t">
-        <div class="guide__head"><span class="guide__badge">8 LANGKAH MUDAH</span><h3 id="g-wa-insight-saluran-t">Cara Mengecek Insight Saluran WhatsApp</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/8 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-1"><label for="g-wa-insight-saluran-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi WhatsApp.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-2"><label for="g-wa-insight-saluran-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Masuk ke menu Pembaruan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-3"><label for="g-wa-insight-saluran-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Pilih saluran WhatsApp yang kamu kelola.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-4"><label for="g-wa-insight-saluran-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Klik nama saluran untuk melihat informasi saluran.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-5"><label for="g-wa-insight-saluran-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Cari menu Insight atau Statistik jika tersedia.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-6"><label for="g-wa-insight-saluran-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Periksa data jangkauan, jumlah pengikut, dan wilayah audiens.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-7"><label for="g-wa-insight-saluran-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Untuk melihat kota atau daerah dengan audiens terbanyak, periksa bagian Wilayah teratas.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-insight-saluran-8"><label for="g-wa-insight-saluran-8"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 8: </span>Screenshot halaman Insight sebagai bukti data saluran.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/wa-insight-saluran.webp" data-title="Cara Mengecek Insight Saluran WhatsApp" data-alt="Infografis: Cara Mengecek Insight Saluran WhatsApp, 8 langkah bergambar"><img src="assets/tutorial/wa-insight-saluran.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Insight Saluran WhatsApp, 8 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Saluran%20WhatsApp%20saya%20%28Insight%20saluran%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Saluran WhatsApp saya (Insight saluran)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-wa-jangkauan" aria-labelledby="g-wa-jangkauan-t">
-        <div class="guide__head"><span class="guide__badge">6 LANGKAH MUDAH</span><h3 id="g-wa-jangkauan-t">Langkah-langkah Cek Insight Jangkauan Saluran WhatsApp</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/6 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-wa-jangkauan-1"><label for="g-wa-jangkauan-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka WhatsApp, lalu pilih menu Pembaruan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-jangkauan-2"><label for="g-wa-jangkauan-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Buka saluran yang kamu kelola.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-jangkauan-3"><label for="g-wa-jangkauan-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik nama saluran, lalu pilih Insight.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-jangkauan-4"><label for="g-wa-jangkauan-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih tab Jangkauan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-jangkauan-5"><label for="g-wa-jangkauan-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Atur periode menjadi 30 hari terakhir.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-jangkauan-6"><label for="g-wa-jangkauan-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Screenshot tampilan insight yang menunjukkan akun dijangkau dan wilayah teratas.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/wa-jangkauan.webp" data-title="Langkah-langkah Cek Insight Jangkauan Saluran WhatsApp" data-alt="Infografis: Langkah-langkah Cek Insight Jangkauan Saluran WhatsApp, 6 langkah bergambar"><img src="assets/tutorial/wa-jangkauan.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Langkah-langkah Cek Insight Jangkauan Saluran WhatsApp, 6 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Saluran%20WhatsApp%20saya%20%28Jangkauan%20saluran%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Saluran WhatsApp saya (Jangkauan saluran)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-wa-perkembangan" aria-labelledby="g-wa-perkembangan-t">
-        <div class="guide__head"><span class="guide__badge">6 LANGKAH MUDAH</span><h3 id="g-wa-perkembangan-t">Langkah-langkah Cek Insight Perkembangan Saluran WhatsApp</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/6 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-1"><label for="g-wa-perkembangan-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka WhatsApp, lalu pilih menu Pembaruan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-2"><label for="g-wa-perkembangan-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Buka saluran yang kamu kelola.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-3"><label for="g-wa-perkembangan-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik nama saluran, lalu pilih Insight.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-4"><label for="g-wa-perkembangan-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih tab Perkembangan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-5"><label for="g-wa-perkembangan-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Atur periode menjadi 30 hari terakhir.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-6"><label for="g-wa-perkembangan-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Screenshot tampilan insight yang menunjukkan data perkembangan pengikut.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/wa-perkembangan.webp" data-title="Langkah-langkah Cek Insight Perkembangan Saluran WhatsApp" data-alt="Infografis: Langkah-langkah Cek Insight Perkembangan Saluran WhatsApp, 6 langkah bergambar"><img src="assets/tutorial/wa-perkembangan.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Langkah-langkah Cek Insight Perkembangan Saluran WhatsApp, 6 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Saluran%20WhatsApp%20saya%20%28Perkembangan%20saluran%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Saluran WhatsApp saya (Perkembangan saluran)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-wa-perkembangan-pengikut" aria-labelledby="g-wa-perkembangan-pengikut-t">
-        <div class="guide__head"><span class="guide__badge">7 LANGKAH MUDAH</span><h3 id="g-wa-perkembangan-pengikut-t">Cara Mengecek Insight Perkembangan Pengikut Saluran WhatsApp</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/7 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-1"><label for="g-wa-perkembangan-pengikut-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka WhatsApp, lalu masuk ke menu Pembaruan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-2"><label for="g-wa-perkembangan-pengikut-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Pilih saluran WhatsApp yang kamu kelola.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-3"><label for="g-wa-perkembangan-pengikut-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik nama saluran, lalu pilih Insight.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-4"><label for="g-wa-perkembangan-pengikut-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Pilih tab Perkembangan.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-5"><label for="g-wa-perkembangan-pengikut-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Atur periode waktu, misalnya 30 hari terakhir.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-6"><label for="g-wa-perkembangan-pengikut-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Periksa jumlah pengikut bersih, pengikut baru, dan pengikut yang berhenti mengikuti.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-perkembangan-pengikut-7"><label for="g-wa-perkembangan-pengikut-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Screenshot halaman tersebut sebagai bukti Insight.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/wa-perkembangan-pengikut.webp" data-title="Cara Mengecek Insight Perkembangan Pengikut Saluran WhatsApp" data-alt="Infografis: Cara Mengecek Insight Perkembangan Pengikut Saluran WhatsApp, 7 langkah bergambar"><img src="assets/tutorial/wa-perkembangan-pengikut.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Cara Mengecek Insight Perkembangan Pengikut Saluran WhatsApp, 7 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Saluran%20WhatsApp%20saya%20%28Perkembangan%20pengikut%20saluran%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Saluran WhatsApp saya (Perkembangan pengikut saluran)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      <article class="guide" id="g-wa-pengikut" aria-labelledby="g-wa-pengikut-t">
-        <div class="guide__head"><span class="guide__badge">7 LANGKAH MUDAH</span><h3 id="g-wa-pengikut-t">Langkah-langkah Cek Insight Pengikut Saluran WhatsApp</h3>
-          <div class="progress"><span class="progress__bar" aria-hidden="true"><i></i></span><span class="progress__txt" aria-live="polite">0/7 langkah</span><button type="button" class="chip guide__reset">Ulangi</button></div></div>
-        <ol class="steps">
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-1"><label for="g-wa-pengikut-1"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 1: </span>Buka aplikasi WhatsApp.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-2"><label for="g-wa-pengikut-2"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 2: </span>Pilih menu Pembaruan, lalu buka saluran WhatsApp yang kamu kelola.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-3"><label for="g-wa-pengikut-3"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 3: </span>Klik nama saluran untuk membuka informasi saluran.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-4"><label for="g-wa-pengikut-4"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 4: </span>Cari dan pilih menu Insight.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-5"><label for="g-wa-pengikut-5"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 5: </span>Pilih tab Pengikut untuk melihat data pengikut saluran.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-6"><label for="g-wa-pengikut-6"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 6: </span>Screenshot halaman insight yang menampilkan total pengikut, persentase pertumbuhan pengikut selama 30 hari terakhir, dan wilayah teratas.</span></label></li>
-          <li class="step"><input type="checkbox" id="g-wa-pengikut-7"><label for="g-wa-pengikut-7"><span class="step__n" aria-hidden="true"></span><span class="step__t"><span class="sr-only">Langkah 7: </span>Kirim screenshot tersebut sebagai bukti insight saluran WhatsApp.</span></label></li>
-        </ol>
-        <div class="guide__side"><a class="thumb" href="assets/tutorial/wa-pengikut.webp" data-title="Langkah-langkah Cek Insight Pengikut Saluran WhatsApp" data-alt="Infografis: Langkah-langkah Cek Insight Pengikut Saluran WhatsApp, 7 langkah bergambar"><img src="assets/tutorial/wa-pengikut.webp" width="720" height="1193" loading="lazy" decoding="async" alt="Infografis: Langkah-langkah Cek Insight Pengikut Saluran WhatsApp, 7 langkah bergambar"><span><svg class="icon" aria-hidden="true"><use href="#i-zoom"/></svg>Lihat infografis</span></a></div>
-        <div class="done-msg"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><p>Semua langkah selesai. Kirim screenshot-nya ke admin.</p><a class="btn btn--primary btn--sm" href="https://wa.me/628888999904?text=Halo%20admin%20D%20Buy%2C%20saya%20mau%20kirim%20screenshot%20insight%20akun%20Saluran%20WhatsApp%20saya%20%28Pengikut%20saluran%29." data-wa="Halo admin D Buy, saya mau kirim screenshot insight akun Saluran WhatsApp saya (Pengikut saluran)." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Kirim ke Admin</a></div>
-      </article>
-      </div>
-    </div>
+    <script type="application/json" id="tutData">{"ig": {"name": "Instagram", "app": "Instagram", "guides": [{"id": "ig-insight-akun", "title": "Langkah-langkah Mencari Insight Akun Instagram", "badge": "7 LANGKAH MUDAH", "topic": "Insight akun", "img": "assets/tutorial/ig-insight-akun.webp", "steps": [{"t": "Buka profil Instagram kamu.", "k": "open", "l": "Profil"}, {"t": "Klik \"Dasbor Profesional\" atau \"Dasbor Anda\".", "k": "tap", "l": "Dasbor Profesional"}, {"t": "Pilih menu \"Insight\" atau \"Lihat Insight\".", "k": "tap", "l": "Insight"}, {"t": "Pilih bagian \"Tayangan\" untuk melihat data performa akun.", "k": "tab", "l": "Tayangan"}, {"t": "Scroll ke bagian \"Audiens\" untuk melihat informasi mengenai audiens akun.", "k": "scroll", "l": "Audiens"}, {"t": "Screenshot halaman insight yang menampilkan data tersebut.", "k": "shot", "l": "Insight akun"}, {"t": "Kirimkan screenshot insight akun kepada kami untuk membantu proses pengecekan harga akun.", "k": "send", "l": "Screenshot insight"}]}, {"id": "ig-lokasi-audiens", "title": "Langkah-langkah Mencari Data Lokasi Audiens Instagram", "badge": "7 LANGKAH MUDAH", "topic": "Lokasi audiens (kota)", "img": "assets/tutorial/ig-lokasi-audiens.webp", "steps": [{"t": "Buka Instagram, lalu masuk ke Profil.", "k": "open", "l": "Profil"}, {"t": "Klik garis tiga ≡ di pojok kanan atas.", "k": "tap", "l": "≡ Menu"}, {"t": "Pilih menu \"Dasbor Anda\".", "k": "tap", "l": "Dasbor Anda"}, {"t": "Klik pilihan \"Tayangan\".", "k": "tap", "l": "Tayangan"}, {"t": "Pilih \"Audiens\".", "k": "tab", "l": "Audiens"}, {"t": "Scroll ke bawah sampai menemukan \"Lokasi Populer\", lalu pilih \"Kota\".", "k": "scroll", "l": "Lokasi Populer · Kota"}, {"t": "Screenshot bagian tersebut, kemudian kirimkan ke admin", "k": "shot", "l": "Lokasi audiens"}]}, {"id": "ig-insight-postingan", "title": "Langkah-langkah Melihat Insight per Postingan Instagram", "badge": "5 LANGKAH MUDAH", "topic": "Insight per postingan", "img": "assets/tutorial/ig-insight-postingan.webp", "steps": [{"t": "Buka profil akun Instagram kamu.", "k": "open", "l": "Profil"}, {"t": "Pilih salah satu postingan yang ingin dilihat insight-nya.", "k": "tap", "l": "Pilih postingan"}, {"t": "Klik ikon dua garis/titik di pojok kanan atas pada postingan.", "k": "tap", "l": "⋯ Opsi postingan"}, {"t": "Pilih \"Lihat Insight\".", "k": "tap", "l": "Lihat Insight"}, {"t": "Setelah halaman insight terbuka, screenshot bagian insight tersebut dan kirimkan kepada kami.", "k": "shot", "l": "Insight postingan"}]}]}, "tt": {"name": "TikTok", "app": "TikTok", "guides": [{"id": "tiktok-insight-akun", "title": "Cara Mengecek Insight Akun TikTok", "badge": "9 LANGKAH MUDAH", "topic": "Insight akun (Ikhtisar)", "img": "assets/tutorial/tiktok-insight-akun.webp", "steps": [{"t": "Buka aplikasi TikTok dan masuk ke akun kamu.", "k": "open", "l": "TikTok"}, {"t": "Klik Profil di pojok kanan bawah.", "k": "tap", "l": "Profil"}, {"t": "Klik ikon ≡ di pojok kanan atas.", "k": "tap", "l": "≡ Menu"}, {"t": "Pilih menu TikTok Studio.", "k": "tap", "l": "TikTok Studio"}, {"t": "Pilih Analisis.", "k": "tap", "l": "Analisis"}, {"t": "Klik tab Ikhtisar.", "k": "tab", "l": "Ikhtisar"}, {"t": "Pilih periode 7 hari.", "k": "period", "l": "7 hari"}, {"t": "Screenshot halaman Insight yang menampilkan tayangan postingan, tampilan profil, suka, komentar, dan bagikan, seperti contoh gambar.", "k": "shot", "l": "Ikhtisar akun"}, {"t": "Kirimkan screenshot tersebut sesuai instruksi yang diberikan.", "k": "send", "l": "Screenshot insight"}]}, {"id": "tiktok-view-postingan", "title": "Cara Mengecek Insight View per Postingan TikTok", "badge": "6 LANGKAH MUDAH", "topic": "View per postingan", "img": "assets/tutorial/tiktok-view-postingan.webp", "steps": [{"t": "Buka aplikasi TikTok dan masuk ke menu Profil.", "k": "open", "l": "Profil"}, {"t": "Pilih salah satu video yang ingin kamu periksa.", "k": "tap", "l": "Pilih video"}, {"t": "Klik Lihat analisis atau Analisis pada video tersebut.", "k": "tap", "l": "Lihat analisis"}, {"t": "Perhatikan jumlah tayangan video (views) dan data Insight lainnya, seperti total waktu putar, rata-rata waktu menonton, persentase penonton yang menonton sampai selesai, dan pengikut baru.", "k": "look", "l": "Views & waktu tonton"}, {"t": "Pastikan data analisis video sudah terlihat dengan jelas.", "k": "look", "l": "Data terlihat jelas"}, {"t": "Screenshot halaman Analisis Video tersebut sebagai bukti Insight per postingan.", "k": "shot", "l": "Analisis video"}]}, {"id": "tiktok-lokasi-audiens", "title": "Cara Mengecek Data Audiens TikTok Berdasarkan Kota atau Daerah", "badge": "12 LANGKAH MUDAH", "topic": "Lokasi audiens (kota)", "img": "assets/tutorial/tiktok-lokasi-audiens.webp", "steps": [{"t": "Buka aplikasi TikTok dan masuk ke akun kamu.", "k": "open", "l": "TikTok"}, {"t": "Klik Profil di pojok kanan bawah.", "k": "tap", "l": "Profil"}, {"t": "Klik ikon ≡ di pojok kanan atas.", "k": "tap", "l": "≡ Menu"}, {"t": "Pilih menu TikTok Studio.", "k": "tap", "l": "TikTok Studio"}, {"t": "Pilih Analisis.", "k": "tap", "l": "Analisis"}, {"t": "Klik tab Penonton.", "k": "tab", "l": "Penonton"}, {"t": "Cari bagian Wawasan penonton.", "k": "scroll", "l": "Wawasan penonton"}, {"t": "Pilih menu Lokasi.", "k": "tab", "l": "Lokasi"}, {"t": "Perhatikan daftar negara beserta persentase audiensnya.", "k": "look", "l": "Negara & persentase"}, {"t": "Klik Indonesia untuk melihat rincian kota atau daerah asal audiens.", "k": "tap", "l": "Indonesia"}, {"t": "Periksa daftar kota beserta persentasenya, lalu tentukan kota dengan persentase tertinggi sebagai lokasi audiens terbanyak.", "k": "look", "l": "Kota teratas"}, {"t": "Screenshot halaman tersebut sebagai bukti data audiens akun TikTok kamu.", "k": "shot", "l": "Data audiens"}]}]}, "yt": {"name": "YouTube", "app": "YouTube Studio", "guides": [{"id": "yt-insight-channel", "title": "Cara Mengecek Insight Akun YouTube", "badge": "8 LANGKAH MUDAH", "topic": "Insight akun (channel)", "img": "assets/tutorial/yt-insight-channel.webp", "steps": [{"t": "Buka aplikasi YouTube Studio dan login ke akun YouTube kamu.", "k": "open", "l": "YouTube Studio"}, {"t": "Pada halaman Dasbor, lihat bagian analisis channel.", "k": "look", "l": "Analisis channel"}, {"t": "Perhatikan jumlah subscriber, penayangan, dan waktu tonton yang ditampilkan.", "k": "look", "l": "Subscriber & penayangan"}, {"t": "Pilih video pada bagian Konten terbaru yang dipublikasikan untuk melihat performa video tertentu.", "k": "tap", "l": "Konten terbaru"}, {"t": "Perhatikan data Insight, seperti jumlah penayangan (views), persentase penayangan rata-rata, suka, dan komentar.", "k": "look", "l": "Views, suka, komentar"}, {"t": "Untuk melihat analisis lebih lengkap, klik menu Analytics di bagian bawah layar.", "k": "tap", "l": "Analytics"}, {"t": "Pilih periode waktu yang ingin diperiksa, misalnya 28 hari terakhir.", "k": "period", "l": "28 hari"}, {"t": "Screenshot halaman Insight yang menampilkan data akun YouTube kamu sebagai bukti.", "k": "shot", "l": "Insight channel"}]}, {"id": "yt-penayangan", "title": "Cara Mengecek Insight Penayangan YouTube", "badge": "7 LANGKAH MUDAH", "topic": "Penayangan & waktu tonton", "img": "assets/tutorial/yt-penayangan.webp", "steps": [{"t": "Buka aplikasi YouTube Studio dan login ke akun kamu.", "k": "open", "l": "YouTube Studio"}, {"t": "Klik menu Analytics di bagian bawah layar.", "k": "tap", "l": "Analytics"}, {"t": "Pilih tab Ringkasan.", "k": "tab", "l": "Ringkasan"}, {"t": "Perhatikan jumlah Penayangan dan Waktu tonton yang ditampilkan.", "k": "look", "l": "Penayangan & waktu tonton"}, {"t": "Periksa grafik untuk melihat perkembangan penayangan video selama periode tertentu.", "k": "look", "l": "Grafik penayangan"}, {"t": "Gulir ke bawah untuk melihat bagian Konten populer beserta jumlah penayangannya.", "k": "scroll", "l": "Konten populer"}, {"t": "Pastikan data Insight terlihat jelas, lalu screenshot halaman tersebut sebagai bukti.", "k": "shot", "l": "Ringkasan"}]}]}, "wa": {"name": "Saluran WhatsApp", "app": "WhatsApp", "guides": [{"id": "wa-insight-saluran", "title": "Cara Mengecek Insight Saluran WhatsApp", "badge": "8 LANGKAH MUDAH", "topic": "Insight saluran", "img": "assets/tutorial/wa-insight-saluran.webp", "steps": [{"t": "Buka aplikasi WhatsApp.", "k": "open", "l": "WhatsApp"}, {"t": "Masuk ke menu Pembaruan.", "k": "tab", "l": "Pembaruan"}, {"t": "Pilih saluran WhatsApp yang kamu kelola.", "k": "tap", "l": "Saluran kamu"}, {"t": "Klik nama saluran untuk melihat informasi saluran.", "k": "tap", "l": "Nama saluran"}, {"t": "Cari menu Insight atau Statistik jika tersedia.", "k": "tap", "l": "Insight"}, {"t": "Periksa data jangkauan, jumlah pengikut, dan wilayah audiens.", "k": "look", "l": "Jangkauan & pengikut"}, {"t": "Untuk melihat kota atau daerah dengan audiens terbanyak, periksa bagian Wilayah teratas.", "k": "scroll", "l": "Wilayah teratas"}, {"t": "Screenshot halaman Insight sebagai bukti data saluran.", "k": "shot", "l": "Insight saluran"}]}, {"id": "wa-jangkauan", "title": "Langkah-langkah Cek Insight Jangkauan Saluran WhatsApp", "badge": "6 LANGKAH MUDAH", "topic": "Jangkauan saluran", "img": "assets/tutorial/wa-jangkauan.webp", "steps": [{"t": "Buka WhatsApp, lalu pilih menu Pembaruan.", "k": "open", "l": "WhatsApp"}, {"t": "Buka saluran yang kamu kelola.", "k": "tap", "l": "Saluran kamu"}, {"t": "Klik nama saluran, lalu pilih Insight.", "k": "tap", "l": "Insight"}, {"t": "Pilih tab Jangkauan.", "k": "tab", "l": "Jangkauan"}, {"t": "Atur periode menjadi 30 hari terakhir.", "k": "period", "l": "30 hari"}, {"t": "Screenshot tampilan insight yang menunjukkan akun dijangkau dan wilayah teratas.", "k": "shot", "l": "Jangkauan"}]}, {"id": "wa-perkembangan", "title": "Langkah-langkah Cek Insight Perkembangan Saluran WhatsApp", "badge": "6 LANGKAH MUDAH", "topic": "Perkembangan saluran", "img": "assets/tutorial/wa-perkembangan.webp", "steps": [{"t": "Buka WhatsApp, lalu pilih menu Pembaruan.", "k": "open", "l": "WhatsApp"}, {"t": "Buka saluran yang kamu kelola.", "k": "tap", "l": "Saluran kamu"}, {"t": "Klik nama saluran, lalu pilih Insight.", "k": "tap", "l": "Insight"}, {"t": "Pilih tab Perkembangan.", "k": "tab", "l": "Perkembangan"}, {"t": "Atur periode menjadi 30 hari terakhir.", "k": "period", "l": "30 hari"}, {"t": "Screenshot tampilan insight yang menunjukkan data perkembangan pengikut.", "k": "shot", "l": "Perkembangan"}]}, {"id": "wa-perkembangan-pengikut", "title": "Cara Mengecek Insight Perkembangan Pengikut Saluran WhatsApp", "badge": "7 LANGKAH MUDAH", "topic": "Perkembangan pengikut saluran", "img": "assets/tutorial/wa-perkembangan-pengikut.webp", "steps": [{"t": "Buka WhatsApp, lalu masuk ke menu Pembaruan.", "k": "open", "l": "WhatsApp"}, {"t": "Pilih saluran WhatsApp yang kamu kelola.", "k": "tap", "l": "Saluran kamu"}, {"t": "Klik nama saluran, lalu pilih Insight.", "k": "tap", "l": "Insight"}, {"t": "Pilih tab Perkembangan.", "k": "tab", "l": "Perkembangan"}, {"t": "Atur periode waktu, misalnya 30 hari terakhir.", "k": "period", "l": "30 hari"}, {"t": "Periksa jumlah pengikut bersih, pengikut baru, dan pengikut yang berhenti mengikuti.", "k": "look", "l": "Pengikut bersih & baru"}, {"t": "Screenshot halaman tersebut sebagai bukti Insight.", "k": "shot", "l": "Perkembangan pengikut"}]}, {"id": "wa-pengikut", "title": "Langkah-langkah Cek Insight Pengikut Saluran WhatsApp", "badge": "7 LANGKAH MUDAH", "topic": "Pengikut saluran", "img": "assets/tutorial/wa-pengikut.webp", "steps": [{"t": "Buka aplikasi WhatsApp.", "k": "open", "l": "WhatsApp"}, {"t": "Pilih menu Pembaruan, lalu buka saluran WhatsApp yang kamu kelola.", "k": "tap", "l": "Saluran kamu"}, {"t": "Klik nama saluran untuk membuka informasi saluran.", "k": "tap", "l": "Nama saluran"}, {"t": "Cari dan pilih menu Insight.", "k": "tap", "l": "Insight"}, {"t": "Pilih tab Pengikut untuk melihat data pengikut saluran.", "k": "tab", "l": "Pengikut"}, {"t": "Screenshot halaman insight yang menampilkan total pengikut, persentase pertumbuhan pengikut selama 30 hari terakhir, dan wilayah teratas.", "k": "shot", "l": "Pengikut saluran"}, {"t": "Kirim screenshot tersebut sebagai bukti insight saluran WhatsApp.", "k": "send", "l": "Screenshot insight"}]}]}}</script>
   </div>
 </section>
 
@@ -1011,41 +823,6 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
   </div>
 </section>
 
-<!-- KENAPA D BUY -->
-<section class="sec sec--tint" id="kenapa" aria-labelledby="why-title">
-  <div class="wrap">
-    <div class="sec-head sec-head--center reveal">
-      <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-shield"/></svg></span>Kenapa D Buy?</span>
-      <h2 id="why-title">Aman, Resmi &amp; Terpercaya</h2>
-      <p>Layanan pembelian akun media sosial di bawah naungan Universitas STEKOM.</p>
-    </div>
-    <div class="why">
-      <article class="card card--feature reveal">
-        <div>
-          <span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span>
-          <h3>Apa yang Kami Review?</h3>
-          <p>Harga akun ditentukan dari kualitas, bukan cuma jumlah followers. Ini yang kami nilai dari screenshot insight-mu.</p>
-        </div>
-        <ul class="review-list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg><div><strong>Kualitas &amp; keaslian audiens</strong>Engagement rate dan interaksi yang nyata.</div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg><div><strong>Demografi pengikut</strong>Data insight, usia, dan lokasi audiens.</div></li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>Pelanggaran &amp; monetisasi</strong>Akun bebas pelanggaran, status monetisasi aman.</div></li>
-        </ul>
-      </article>
-      <article class="card reveal"><span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-school"/></svg></span><h3>Resmi di Bawah STEKOM</h3><p>Program Duta Teladan by Universitas STEKOM. Kredibilitas terjamin.</p></article>
-      <article class="card reveal"><span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Pencairan Maks. 3 Hari</h3><p>Setelah verifikasi keamanan akun selesai, dana langsung diproses ke rekeningmu.</p></article>
-      <article class="card reveal"><span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><h3>Konsultasi Gratis</h3><p>Admin siap membantu menilai potensi akunmu lewat WhatsApp tanpa biaya.</p></article>
-      <article class="card reveal"><span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><h3>Tanpa Biaya di Awal</h3><p>Tidak ada biaya pengajuan. Pembayaran murni di akhir saat transaksi berhasil.</p></article>
-      <article class="card reveal"><span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><h3>Proses Transparan</h3><p>Setiap tahap dijelaskan: review, negosiasi, sampai pencairan.</p></article>
-      <article class="card reveal"><span class="card__ic"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Data Penjual Dilindungi</h3><p>Pemindahan kepemilikan dilakukan aman dan data pribadimu dijaga kerahasiaannya.</p></article>
-    </div>
-    <div class="partners reveal">
-      <p>Didukung &amp; bermitra dengan</p>
-      <span class="partner">Universitas STEKOM</span><span class="partner">TopLoker.com</span><span class="partner">Disabilitas.id</span>
-    </div>
-  </div>
-</section>
-
 <!-- TESTIMONI -->
 <section class="sec" id="testimoni" aria-labelledby="testi-title">
   <div class="wrap">
@@ -1073,26 +850,14 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
   <div class="wrap">
     <div class="sec-head sec-head--center reveal">
       <span class="eyebrow"><span class="eyebrow__dot"><svg aria-hidden="true"><use href="#i-chat"/></svg></span>Tanya jawab</span>
-      <h2 id="faq-title">Pertanyaan yang Sering Diajukan</h2>
+      <h2 id="faq-title">Pertanyaan Penting</h2>
     </div>
     <div class="faq reveal">
-      <details open><summary>Apakah D Buy menjual akun media sosial?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Tidak. D Buy tidak menjual akun dan tidak punya katalog akun. Kami <strong>membeli</strong> akun dari pemilik yang ingin menjualnya. Kalau kamu ingin membeli akun, mohon maaf, layanan itu tidak tersedia.</p></div></details>
-      <details><summary>Akun apa saja yang bisa saya jual?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Instagram, TikTok, YouTube, dan Saluran WhatsApp. Untuk Instagram dan TikTok minimal 500 followers. YouTube dan Saluran WhatsApp dinilai langsung oleh admin dari insight-nya.</p></div></details>
-      <details><summary>Apakah menjual akun di sini aman?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Aman. Layanan ini berada di bawah program Duta Teladan by Universitas STEKOM. Setiap akun melewati review dan verifikasi keamanan sebelum transaksi selesai, dan data penjual dijaga kerahasiaannya.</p></div></details>
-      <details><summary>Kapan saya menerima pembayaran?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Pembayaran dilakukan di akhir transaksi: setelah akun direview, disetujui, dan kepemilikan dipindahkan. Verifikasi keamanan dan pencairan maksimal 3 hari.</p></div></details>
-      <details><summary>Kenapa harga final bisa berbeda dari kalkulator?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Kalkulator menghitung perkiraan dari jumlah followers. Harga final ditentukan dari hasil review: engagement rate, keaslian audiens, demografi pengikut, dan status monetisasi.</p></div></details>
-      <details><summary>Kenapa saya harus mengirim screenshot insight?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Insight menunjukkan kualitas akun yang sebenarnya, seperti jangkauan, penayangan, dan lokasi audiens. Data ini membuat penawaran harga lebih akurat dan proses review lebih cepat. Caranya ada di <a href="#tutorial">tutorial cek insight</a>.</p></div></details>
-      <details><summary>Apakah data login saya aman?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Ya. Data akun hanya diserahkan setelah harga disepakati, dan pemindahan kepemilikan dilakukan terstruktur. Jangan pernah mengirim password sebelum ada kesepakatan harga.</p></div></details>
-      <details><summary>Akun seperti apa yang bisa ditolak?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Akun dengan followers palsu, aktivitas tidak wajar, bukan milik pribadi, atau hasil pelanggaran dapat ditolak saat review.</p></div></details>
-    </div>
-    <div class="rules reveal" id="ketentuan">
-      <h3><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>Ketentuan Penjualan</h3>
-      <ol>
-        <li>Akun harus milik pribadi dan bukan hasil pelanggaran.</li>
-        <li>Akun yang terindikasi memakai followers palsu atau aktivitas tidak wajar dapat ditolak.</li>
-        <li>Harga akun ditentukan berdasarkan hasil review dan performa akun.</li>
-        <li>Dengan mengajukan penjualan, penjual dianggap menyetujui seluruh ketentuan yang berlaku.</li>
-      </ol>
+      <details><summary>Apakah D Buy menjual akun?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Tidak. D Buy hanya <strong>membeli</strong> akun dari pemiliknya. Kami tidak menjual akun dan tidak punya katalog akun.</p></div></details>
+      <details><summary>Kapan saya dibayar?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Di akhir transaksi, setelah akun direview, harga disepakati, dan kepemilikan dipindahkan. Verifikasi dan pencairan maksimal 3 hari.</p></div></details>
+      <details><summary>Kenapa harga final bisa beda dari kalkulator?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Kalkulator hanya menghitung dari jumlah followers. Harga final mengikuti hasil review insight: engagement, keaslian dan demografi audiens, serta status monetisasi.</p></div></details>
+      <details><summary>Apakah data login saya aman?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Ya. Data login baru diserahkan setelah harga disepakati. Jangan pernah kirim password sebelum ada kesepakatan.</p></div></details>
+      <details id="ketentuan"><summary>Akun seperti apa yang ditolak?<span class="plus" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span></summary><div><p>Akun harus milik pribadi dan bukan hasil pelanggaran. Akun dengan followers palsu atau aktivitas tidak wajar akan ditolak. Dengan mengajukan, kamu menyetujui ketentuan ini.</p></div></details>
     </div>
   </div>
 </section>
@@ -1121,7 +886,7 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
       </div>
       <div>
         <h3>Jelajahi</h3>
-        <ul><li><a href="#platform">Platform yang kami beli</a></li><li><a href="#kalkulator">Cek estimasi harga</a></li><li><a href="#tutorial">Tutorial cek insight</a></li><li><a href="#faq">FAQ</a></li></ul>
+        <ul><li><a href="#cara-jual">Cara jual akun</a></li><li><a href="#kalkulator">Cek estimasi harga</a></li><li><a href="#tutorial">Tutorial cek insight</a></li><li><a href="#faq">FAQ</a></li></ul>
       </div>
       <div>
         <h3>Hubungi Admin</h3>
@@ -1208,7 +973,7 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
         });
       });
     }, { rootMargin:'-45% 0px -50% 0px' });
-    ['beranda','platform','kalkulator','cara-jual','tutorial','faq'].forEach(function(id){ var s = document.getElementById(id); if(s) spy.observe(s); });
+    ['kalkulator','cara-jual','tutorial','ajukan','faq'].forEach(function(id){ var s = document.getElementById(id); if(s) spy.observe(s); });
 
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
@@ -1221,38 +986,41 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
   // Link WA statis: pastikan nomor & pesan mengikuti konfigurasi
   $$('[data-wa]').forEach(function(a){ a.href = waUrl(a.getAttribute('data-wa')); });
 
-  // ===== Hero: kartu penawaran berganti platform =====
+  // ===== Hero: kartu penawaran berganti platform (ukuran HP tetap) =====
   (function(){
+    var phone = $('#heroPhone'); if(!phone) return;
     var demo = [
-      { p:'ig', name:'@akun.kamu',       meta:'Instagram · 12.000 followers', price:1200000, bar:72 },
-      { p:'tt', name:'@kontenkamu',      meta:'TikTok · 25.000 followers',    price:1250000, bar:80 },
-      { p:'yt', name:'Channel Kamu',     meta:'YouTube · dinilai dari insight', price:null,  bar:64 },
-      { p:'wa', name:'Saluran Info Kota',meta:'Saluran WA · dinilai dari insight', price:null, bar:58 }
+      { p:'ig', name:'@akun.kamu',        meta:'Instagram · 12.000 followers', price:'Rp1.200.000', bar:72, ins:[82,64,91] },
+      { p:'tt', name:'@kontenkamu',       meta:'TikTok · 25.000 followers',    price:'Rp1.250.000', bar:80, ins:[90,72,86] },
+      { p:'yt', name:'Channel Kamu',      meta:'YouTube · review insight',     price:'Dinilai admin', bar:64, ins:[70,58,88] },
+      { p:'wa', name:'Saluran Info Kota', meta:'Saluran WA · review insight',  price:'Dinilai admin', bar:58, ins:[76,61,93] }
     ];
-    var i = 0, acc = $('#heroAcc'), nm = $('#heroName'), mt = $('#heroMeta'), pr = $('#heroPrice'), bar = $('#heroBar');
+    var i = 0, tile = $('#heroTile'), bars = $$('[data-ins]', phone);
     function show(d){
-      acc.firstElementChild.className = 'tile tile--' + d.p;
-      acc.firstElementChild.innerHTML = '<svg><use href="#i-' + d.p + '"/></svg>';
-      nm.textContent = d.name; mt.textContent = d.meta;
-      pr.textContent = d.price ? rupiah(d.price) : 'Penawaran admin';
-      bar.style.width = d.bar + '%';
+      tile.className = 'tile tile--' + d.p; tile.innerHTML = '<svg><use href="#i-' + d.p + '"/></svg>';
+      $('#heroName').textContent = d.name; $('#heroMeta').textContent = d.meta; $('#heroPrice').textContent = d.price;
+      $('#heroBar').style.width = d.bar + '%';
+      bars.forEach(function(b, k){ b.style.setProperty('--w', d.ins[k] + '%'); });
     }
     show(demo[0]);
     if(reduceMotion) return;
-    setInterval(function(){ i = (i + 1) % demo.length; show(demo[i]); }, 3200);
+    setInterval(function(){
+      if(document.hidden) return;
+      phone.classList.add('is-swapping');
+      setTimeout(function(){ i = (i + 1) % demo.length; show(demo[i]); phone.classList.remove('is-swapping'); }, 250);
+    }, 3500);
   })();
 
   // ===== Hitung naik angka statistik (nilai tetap, hanya animasi) =====
   (function(){
-    var box = $('.stats'); if(!box || reduceMotion || !('IntersectionObserver' in window)) return;
-    var done = false;
+    var box = $('.kpis'); if(!box || reduceMotion || !('IntersectionObserver' in window)) return;
     var o = new IntersectionObserver(function(en){
-      if(!en[0].isIntersecting || done) return; done = true; o.disconnect();
-      $$('.stat__num', box).forEach(function(el){
+      if(!en[0].isIntersecting) return; o.disconnect();
+      $$('[data-count]', box).forEach(function(el){
         var target = parseInt(el.getAttribute('data-count'), 10), suf = el.getAttribute('data-suffix') || '', t0 = null;
         function step(ts){
           if(!t0) t0 = ts;
-          var p = Math.min((ts - t0) / 1300, 1), e = 1 - Math.pow(1 - p, 3);
+          var p = Math.min((ts - t0) / 1200, 1), e = 1 - Math.pow(1 - p, 3);
           el.textContent = num(Math.round(target * e)) + suf;
           if(p < 1) requestAnimationFrame(step);
         }
@@ -1310,87 +1078,169 @@ dialog.lightbox::backdrop{background:rgba(42,5,25,.78);backdrop-filter:blur(4px)
     toast('Data dari kalkulator sudah diisi ke form pengajuan');
     setTimeout(function(){ $('#fUser').focus({ preventScroll:true }); }, 600);
   });
-  $$('[data-pick]').forEach(function(a){ a.addEventListener('click', function(){ setCalcPlat(a.getAttribute('data-pick')); }); });
   paintRange(); renderCalc(false);
 
-  // ===== Tutorial: tab platform, topik, checklist langkah =====
+  // ===== Tutorial interaktif: simulasi HP langkah demi langkah =====
   (function(){
-    var tabs = $$('.tab'), panels = $$('.tpanel');
-    if(!tabs.length) return;
-    $('.tabs').hidden = false;
-    function selectTab(key, focus){
-      tabs.forEach(function(t){
-        var on = t.getAttribute('data-key') === key;
-        t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1;
-        if(on && focus) t.focus();
-      });
-      panels.forEach(function(p){ p.hidden = p.getAttribute('data-key') !== key; });
+    var app = $('#tutApp'), dataEl = $('#tutData');
+    if(!app || !dataEl) return;
+    var DATA = JSON.parse(dataEl.textContent);
+    app.hidden = false;
+    var KEY = 'dbuy-tutorial-v2', store = {};
+    try { store = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
+    function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e){} }
+
+    var player = $('#player'), sim = $('#sim'), screen = $('#simScreen'), simTitle = $('#simTitle'), simTile = $('#simTile');
+    var elBadge = $('#tBadge'), elTitle = $('#tTitle'), elMeter = $('#tMeter'), elMeterTxt = $('#tMeterTxt');
+    var elN = $('#tN'), elT = $('#tT'), elK = $('#tK'), dots = $('#tDots'), prev = $('#tPrev'), next = $('#tNext');
+    var playBtn = $('#tPlay'), imgBtn = $('#tImg'), topicsEl = $('#topics'), sendBtn = $('#tSend');
+    var state = { p:null, g:null, i:0 }, timer = null;
+
+    function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]; }); }
+    function guide(){ return DATA[state.p].guides[state.g]; }
+    function ghosts(n){ var h = ''; for(var k = 0; k < n; k++) h += '<div class="row"><i></i><span class="ghost ' + ['w60','w80','w40'][k % 3] + '"></span></div>'; return h; }
+    var TAP = '<span class="tap"></span>';
+
+    // Satu "layar" HP per jenis langkah
+    function scene(kind, label, idx){
+      var P = DATA[state.p], L = esc(label);
+      switch(kind){
+        case 'open':
+          var icons = '';
+          for(var k = 0; k < 8; k++){
+            icons += k === 5
+              ? '<div class="app target"><span class="tile tile--' + state.p + '"><svg><use href="#i-' + state.p + '"/></svg></span><span>' + esc(P.app) + '</span>' + TAP + '</div>'
+              : '<div class="app"><i></i><span>&nbsp;</span></div>';
+          }
+          return '<div class="apps">' + icons + '</div><div class="loupe"><svg><use href="#i-arrow"/></svg>Buka ' + L + '</div>';
+        case 'tap':
+          var pos = idx % 4, rows = '';
+          for(var r = 0; r < 6; r++) rows += r === pos ? '<div class="row target"><i></i><span>' + L + '</span>' + TAP + '</div>' : ghosts(1);
+          return rows;
+        case 'tab':
+          return '<div class="tabsim"><span>' + (idx % 2 ? 'Ringkasan' : 'Konten') + '</span><span class="on">' + L + TAP + '</span><span>Lainnya</span></div>'
+            + '<div class="chart"><b style="height:40%"></b><b style="height:65%"></b><b style="height:50%"></b><b style="height:80%"></b><b style="height:58%"></b><b style="height:92%"></b><b style="height:70%"></b></div>' + ghosts(3);
+        case 'scroll':
+          return '<div class="scroller">' + ghosts(2) + '<div class="row target"><i></i><span>' + L + '</span>' + TAP + '</div>' + ghosts(2) + '</div><div class="hint-down"><svg><use href="#i-chev-r"/></svg>gulir</div>';
+        case 'period':
+          var opts = ['7 hari','28 hari','30 hari'];
+          return '<div class="chips-s">' + opts.map(function(o){ return o === label ? '<span class="on">' + esc(o) + TAP + '</span>' : '<span>' + o + '</span>'; }).join('') + '</div>'
+            + '<div class="chart"><b style="height:50%"></b><b style="height:62%"></b><b style="height:45%"></b><b style="height:75%"></b><b style="height:68%"></b><b style="height:88%"></b><b style="height:60%"></b></div>' + ghosts(2);
+        case 'look':
+          return '<div class="cards"><div class="card-s focus"><small>Jangkauan</small><b>168,8 rb</b></div><div class="card-s"><small>Pengikut</small><b>1,9 rb</b></div><div class="card-s focus"><small>Penayangan</small><b>25,4 rb</b></div><div class="card-s"><small>Interaksi</small><b>3,1 rb</b></div></div>'
+            + '<div class="chart"><b style="height:35%"></b><b style="height:55%"></b><b style="height:48%"></b><b style="height:72%"></b><b style="height:60%"></b><b style="height:85%"></b></div>'
+            + '<div class="loupe"><svg><use href="#i-eye"/></svg>Perhatikan: ' + L + '</div>';
+        case 'shot':
+          return '<div class="cards"><div class="card-s"><small>Jangkauan</small><b>168,8 rb</b></div><div class="card-s"><small>Pengikut</small><b>1,9 rb</b></div></div>'
+            + '<div class="chart"><b style="height:40%"></b><b style="height:70%"></b><b style="height:52%"></b><b style="height:90%"></b><b style="height:64%"></b></div>' + ghosts(1)
+            + '<span class="shot-frame"></span><span class="flash"></span><div class="shot-toast"><svg><use href="#i-camera"/></svg>Screenshot tersimpan: ' + L + '</div>';
+        case 'send':
+          return '<div class="chat"><div class="bub">Halo! Silakan kirim screenshot insight akunmu ya.</div><div class="bub me img"><i></i><small>✓✓</small></div><div class="bub me">' + L + ' untuk dicek</div></div>'
+            + '<div class="sendbar"><span></span><b><svg><use href="#i-arrow"/></svg></b></div>';
+      }
+      return ghosts(5);
     }
-    tabs.forEach(function(t, i){
-      t.addEventListener('click', function(){ selectTab(t.getAttribute('data-key')); });
-      t.addEventListener('keydown', function(e){
-        var k = e.key, n = null;
-        if(k === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
-        if(k === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
-        if(k === 'Home') n = tabs[0];
-        if(k === 'End') n = tabs[tabs.length - 1];
-        if(n){ e.preventDefault(); selectTab(n.getAttribute('data-key'), true); }
-      });
-    });
-    panels.forEach(function(p){
-      var topics = $$('.topic', p), guides = $$('.guide', p);
-      $('.topics', p).hidden = false;
-      function pick(id){
-        topics.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-guide') === id)); });
-        guides.forEach(function(g){ g.hidden = g.id !== id; });
-      }
-      topics.forEach(function(b){ b.addEventListener('click', function(){ pick(b.getAttribute('data-guide')); }); });
-      pick(topics[0].getAttribute('data-guide'));
-    });
-    selectTab(tabs[0].getAttribute('data-key'));
-    window.__openTutorial = selectTab;
+    var KIND_TXT = { open:'Buka', tap:'Ketuk', tab:'Pilih tab', scroll:'Gulir ke', period:'Periode', look:'Perhatikan', shot:'Screenshot', send:'Kirim ke admin' };
+    var KIND_ICO = { open:'i-arrow', tap:'i-arrow', tab:'i-arrow', scroll:'i-chev-r', period:'i-clock', look:'i-eye', shot:'i-camera', send:'i-wa' };
 
-    // Progres checklist, disimpan di perangkat
-    var KEY = 'dbuy-tutorial-v1', saved = {};
-    try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){}
-    $$('.guide').forEach(function(g){
-      var boxes = $$('.step input', g), out = $('.progress__txt', g), bar = $('.progress__bar i', g);
-      var topicBtn = $('.topic[data-guide="' + g.id + '"]');
-      function update(save){
-        var n = boxes.filter(function(b){ return b.checked; }).length;
-        out.textContent = n + '/' + boxes.length + ' langkah';
-        bar.style.width = (n / boxes.length * 100) + '%';
-        var full = n === boxes.length;
-        if(full && save && !g.classList.contains('is-complete')) toast('Mantap! Screenshot insight siap dikirim ke admin');
-        g.classList.toggle('is-complete', full);
-        if(topicBtn) topicBtn.classList.toggle('is-done', full);
-        if(save){
-          saved[g.id] = boxes.map(function(b){ return b.checked ? 1 : 0; });
-          try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
-        }
-      }
-      if(saved[g.id]) boxes.forEach(function(b, i){ b.checked = !!saved[g.id][i]; });
-      boxes.forEach(function(b){ b.addEventListener('change', function(){ update(true); }); });
-      $('.guide__reset', g).addEventListener('click', function(){ boxes.forEach(function(b){ b.checked = false; }); update(true); });
-      update(false);
+    function renderTopics(){
+      var gs = DATA[state.p].guides;
+      topicsEl.innerHTML = gs.map(function(g, k){
+        var done = store[g.id] && store[g.id].done;
+        return '<button type="button" class="topic' + (done ? ' is-done' : '') + '" data-g="' + k + '" aria-pressed="' + (k === state.g) + '"><svg class="ok" aria-hidden="true"><use href="#i-check"/></svg>' + esc(g.topic) + ' <small>' + g.steps.length + ' langkah</small></button>';
+      }).join('');
+      $$('.topic', topicsEl).forEach(function(b){ b.addEventListener('click', function(){ openGuide(state.p, +b.getAttribute('data-g'), true); }); });
+    }
+    function renderDots(){
+      var g = guide(), seen = (store[g.id] && store[g.id].seen) || 0;
+      dots.innerHTML = g.steps.map(function(s, k){
+        return '<button type="button" class="dot' + (k <= seen ? ' seen' : '') + '" data-i="' + k + '" aria-label="Langkah ' + (k + 1) + '"' + (k === state.i ? ' aria-current="step"' : '') + '></button>';
+      }).join('');
+      $$('.dot', dots).forEach(function(d){ d.addEventListener('click', function(){ go(+d.getAttribute('data-i')); }); });
+    }
+    function show(dir){
+      var g = guide(), s = g.steps[state.i], n = g.steps.length;
+      player.classList.remove('is-done');
+      player.classList.toggle('back', dir < 0);
+      screen.innerHTML = '<div class="scene">' + scene(s.k, s.l, state.i) + '</div>';
+      simTitle.textContent = state.i === 0 ? DATA[state.p].app : s.l.replace(/^≡\s*/, '');
+      elN.textContent = state.i + 1;
+      elT.textContent = s.t;
+      elK.innerHTML = '<svg aria-hidden="true"><use href="#' + KIND_ICO[s.k] + '"/></svg>' + KIND_TXT[s.k] + ': ' + esc(s.l);
+      elMeter.style.width = ((state.i + 1) / n * 100) + '%';
+      elMeterTxt.textContent = 'Langkah ' + (state.i + 1) + ' dari ' + n;
+      prev.disabled = state.i === 0;
+      $('#tNextTxt').textContent = state.i === n - 1 ? 'Selesai' : 'Lanjut';
+      var rec = store[g.id] || (store[g.id] = { seen:0, done:false });
+      rec.seen = Math.max(rec.seen, state.i); save();
+      renderDots();
+    }
+    function finish(){
+      stop();
+      var g = guide(); store[g.id] = store[g.id] || {}; store[g.id].done = true; store[g.id].seen = g.steps.length - 1; save();
+      player.classList.add('is-done');
+      screen.innerHTML = '<div class="scene">' + scene('send', 'Screenshot insight', 0) + '</div>';
+      simTitle.textContent = 'Admin D Buy';
+      elMeter.style.width = '100%'; elMeterTxt.textContent = 'Selesai ' + g.steps.length + ' dari ' + g.steps.length + ' langkah';
+      sendBtn.href = waUrl('Halo admin D Buy, saya mau kirim screenshot insight akun ' + DATA[state.p].name + ' saya (' + g.topic + ').');
+      renderTopics(); renderDots();
+      toast('Mantap! Screenshot insight siap dikirim ke admin');
+      $('#tFinishTitle').focus({ preventScroll:true });
+    }
+    function go(i){
+      var n = guide().steps.length;
+      if(i >= n){ finish(); return; }
+      i = Math.max(0, i);
+      var dir = i - state.i; state.i = i; show(dir);
+    }
+    function openGuide(p, g, user){
+      stop();
+      state.p = p; state.g = g; state.i = 0;
+      $$('.tab', app).forEach(function(t){ t.setAttribute('aria-pressed', String(t.getAttribute('data-p') === p)); });
+      var G = guide();
+      elBadge.textContent = G.badge; elTitle.textContent = G.title;
+      imgBtn.setAttribute('data-src', G.img); imgBtn.setAttribute('data-title', G.title);
+      simTile.className = 'tile tile--' + p; simTile.innerHTML = '<svg><use href="#i-' + p + '"/></svg>';
+      renderTopics(); show(0);
+      if(user && window.matchMedia('(max-width: 859px)').matches) player.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block:'start' });
+    }
+    // Putar otomatis
+    function stop(){ clearInterval(timer); timer = null; playBtn.setAttribute('aria-pressed','false'); $('#tPlayTxt').textContent = 'Putar otomatis'; }
+    playBtn.addEventListener('click', function(){
+      if(timer){ stop(); return; }
+      if(player.classList.contains('is-done')) go(0);
+      playBtn.setAttribute('aria-pressed','true'); $('#tPlayTxt').textContent = 'Jeda';
+      timer = setInterval(function(){ go(state.i + 1); }, 3200);
     });
-  })();
-  $$('[data-tut]').forEach(function(a){ a.addEventListener('click', function(){ if(window.__openTutorial) window.__openTutorial(a.getAttribute('data-tut')); }); });
+    prev.addEventListener('click', function(){ stop(); go(state.i - 1); });
+    next.addEventListener('click', function(){ stop(); go(state.i + 1); });
+    $('#tAgain').addEventListener('click', function(){ go(0); next.focus(); });
+    player.addEventListener('keydown', function(e){
+      if(e.target.closest('input,select,textarea')) return;
+      if(e.key === 'ArrowRight'){ e.preventDefault(); stop(); go(state.i + 1); }
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); stop(); go(state.i - 1); }
+    });
+    // Geser layar HP
+    var x0 = null;
+    sim.addEventListener('pointerdown', function(e){ x0 = e.clientX; });
+    sim.addEventListener('pointerup', function(e){
+      if(x0 === null) return; var dx = e.clientX - x0; x0 = null;
+      if(Math.abs(dx) > 40){ stop(); go(state.i + (dx < 0 ? 1 : -1)); }
+      else { stop(); go(state.i + 1); } // ketuk layar = lanjut
+    });
+    $$('.tab', app).forEach(function(t){ t.addEventListener('click', function(){ openGuide(t.getAttribute('data-p'), 0, true); }); });
+    window.__openTutorial = function(p){ openGuide(p, 0); };
+    openGuide('ig', 0);
 
-  // Lightbox infografis
-  (function(){
-    var dlg = $('#lightbox'), img = $('#lbImg'), ttl = $('#lbTitle'), opener = null;
-    if(!dlg || typeof dlg.showModal !== 'function') return; // tanpa <dialog>: tautan gambar dibuka biasa
-    $$('.thumb').forEach(function(a){
-      a.addEventListener('click', function(e){
-        e.preventDefault(); opener = a;
-        img.src = a.getAttribute('href'); img.alt = a.getAttribute('data-alt'); ttl.textContent = a.getAttribute('data-title');
-        dlg.showModal();
-      });
+    // Infografis asli
+    var dlg = $('#lightbox'), img = $('#lbImg'), ttl = $('#lbTitle');
+    imgBtn.addEventListener('click', function(){
+      img.src = imgBtn.getAttribute('data-src'); img.alt = 'Infografis: ' + imgBtn.getAttribute('data-title'); ttl.textContent = imgBtn.getAttribute('data-title');
+      if(typeof dlg.showModal === 'function') dlg.showModal(); else window.open(imgBtn.getAttribute('data-src'), '_blank');
     });
     $('#lbClose').addEventListener('click', function(){ dlg.close(); });
     dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
-    dlg.addEventListener('close', function(){ if(opener) opener.focus(); });
+    dlg.addEventListener('close', function(){ imgBtn.focus(); });
   })();
 
   // ===== Form pengajuan → WhatsApp =====
